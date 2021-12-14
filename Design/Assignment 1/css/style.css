@@ -10,8 +10,12 @@ a{
     text-decoration: none;
 }
 
-.navbar{
-    background: #7dd8e8;
+img{
+    cursor: pointer;
+}
+
+.header{
+    background: #7DD9E8;;
     padding: 19px 0 0.5px 0;
 }
 
@@ -78,19 +82,29 @@ a{
 }
 
 
-.navbar-contents-right{
+.header-right-contents{
     text-align: right;
     margin-top: 7px;
     color: #323232;
 }
 
-.contents-top-right{
-    font-size: 15px;
+.top-right{
+    font-size: 16px;
     margin-bottom: 6px;
+    font-weight: 550;
 }
 
-.contents-bottom-right{
+.bottom-right{
     font-size: 11px;
+}
+
+.br-menu{
+    cursor: pointer;
+}
+
+.br-menu:hover{
+    background-color: gray;
+    color:white;
 }
 
 .menubar{
@@ -212,6 +226,11 @@ h2{
 .tab-val{
     font-size: 11px;;
     font-weight: lighter;
+}
+
+.tab-1:hover, .tab-2:hover, .tab-3:hover, .tab-4:hover{
+    color:red;
+    cursor: pointer;
 }
 
 .horizontal-line{
