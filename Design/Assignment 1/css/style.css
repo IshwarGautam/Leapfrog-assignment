@@ -100,6 +100,8 @@ img{
 
 .br-menu{
     cursor: pointer;
+    font-size: 12px;
+    font-weight: 550;
 }
 
 .br-menu:hover{
@@ -135,20 +137,16 @@ img{
     vertical-align: -webkit-baseline-middle;
 }
 
-.notifications{
-    margin-left: 10px;
-}
-
-.noevent{
-    color: #969696;
-}
-
 .main-container{
     margin-top: 30px;
 }
 
 .main-contents-left{
     width: 190px;
+}
+
+.menu-items{
+    font-weight: 550;
 }
 
 .list-topic{
