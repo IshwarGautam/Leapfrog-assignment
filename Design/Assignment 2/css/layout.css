@@ -1,0 +1,16 @@
+img, .search-container-wrapper, .menubar-contents-left, .main-contents-left, .main-contents-center, .center-menu-bar-left, .main-container-img, .list-content, .footer-left{
+    float: left;
+}
+
+.navbar-contents-right, .search-field-right-border, .menubar-contents-right, .main-contents-right, .search-list img, .center-menu-bar-right, .footer-right{
+    float: right;
+}
+
+
+.center-menu-bar-right .center-menu-bar-contents{
+	float:left;
+}
+
+.center-menu-bar-left .center-menu-bar-contents{
+	float: right;
+}

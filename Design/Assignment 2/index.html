@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TuTangle Website</title>
+
+    <!-- Importing CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;700&family=Poppins:wght@200;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Creating a responsive website -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+    <!-- Using Google icon only to hide and show menu -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+</head>
+<body>
+    
+<div class="main-wrapper">
+    <div class="container">
+
+        <!-- Header starts -->
+        <div class="header">
+            <div class="contents clearfix">
+                <div class="header-left-contents">
+                    <img src="images/logo.png">
+                    <span class="search-container-wrapper">
+                        <span class="search-container">
+                            <input type="text" class="search-field-text"placeholder="Search by Term, Member, or Entry Title"/>
+                            <span class="search-field-right-border">
+                                <img src="images/search-field-right-border.png">
+                            </span>
+                            <span class="search-icon">
+                                <a href="#">
+                                    <img src="images/search-icon.png" />
+                                </a>
+                            </span>
+                            <span class="cross-icon">
+                                <a href="#">
+                                    <img src="images/cross-icon.png" />
+                                </a> 
+                            </span>
+                            
+                        </span>
+
+                        <span class="search-button-container">
+                            <a href="#">
+                                <span class="search-button">
+                                    SEARCH
+                                </span>
+                            </a>
+                        </span>
+                    </span>
+                </div>
+
+                <div class="header-right-contents">
+                    <div class="top-right">Joe Burros</div>
+                    <div class="bottom-right" id="dropdown">
+                        <i class="fa fa-times cross-sign" onclick="hideMenu2()"  ></i>
+                        <span class="br-menu">Home</span>
+                        <span class="separator">|</span>
+                        <span class="br-menu">Settings</span>
+                        <span class="separator">|</span>
+                        <span class="br-menu">Log Out</span>
+                    </div>
+                    <i class="fa fa-caret-square-o-down dropdown-icon" onclick="showMenu2()"></i>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- Header ends -->
+
+        <!-- menu bar starts -->
+        <div class="menubar" id="navLinks">
+            <i class="fa fa-times crossbar" onclick="hideMenu()" ></i>
+            <div class="contents clearfix" >
+                <div class="menubar-contents-left">
+                    <span class="menu-items">Create New Entry</span>
+                    <span class="menu-items">My Topic Boxes</span>
+                    <span class="menu-items">Friends</span>
+                    <span class="menu-items">Invite New Member</span>
+                </div>
+                <div class="menubar-contents-right">
+                    <span class="menu-items">
+                        <img src="images/navbar-icon1.png"/>
+                        Topic Boxes Invites - 2
+                    </span>
+                    <span>
+                        <img src="images/navbar-icon2.png">
+                        Friend Requests - 0 
+                    </span>
+                </div>
+            </div>
+        </div>
+        <i class="fa fa-bars linebar" onclick="showMenu()"></i>
+        <!-- menu bar ends -->
+
+        <!-- main content starts -->
+        <div class="main-container">
+            <div class="contents clearfix">
+
+                <!-- Body part (Left Contents) -->
+                <div class="main-contents-left">
+                    <div class="left-search-top">
+                        <div class="list-topic">Recent Searches</div>
+                        <ul class="list-contents">
+                            <li>
+                                <div class="search-list clearfix">
+                                    <span class="vertical-list">Nick Cave and the Bad Seeds</span>
+                                    <img src="images/download-icon.png" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="search-list clearfix">
+                                    <span class="vertical-list">African Animals</span>
+                                    <img src="images/download-icon.png" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="left-search-bottom">
+                        <div class="list-topic">Recent Searches</div>
+                        <ul class="list-contents" id="recent-searches2-container">
+                            <li>
+                                <div class="search-list clearfix">
+                                    <span class="vertical-list">
+                                        Different versions of the Tristan Und Isolde Prelude
+                                    </span>
+                                    <img src="images/3line-icon.png" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="search-list clearfix">
+                                    <span class="vertical-list">Music</span>
+                                    <img src="images/3line-icon.png" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="search-list clearfix">
+                                    <span class="vertical-list">Guitar</span>
+                                    <img src="images/3line-icon.png"/>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="search-list clearfix">
+                                    <span class="vertical-list">Bob Cohen</span>
+                                    <img src="images/3line-icon.png"/>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="search-list clearfix">
+                                    <span class="vertical-list">Mark Schnack</span>
+                                    <img src="images/3line-icon.png"/>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="search-list clearfix">
+                                    <span class="vertical-list">Jefferson Dickey</span>
+                                    <img src="images/3line-icon.png" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Body part (Left Contents) end-->
+
+                <!-- Body part (Center Contents) -->
+                <div class="main-contents-center">
+                    <h2>Entries</h2>
+                    <div class="center-menu-bar-container ">
+                        <div class="center-menu-bar-top clearfix">
+                            <div class="center-menu-bar-left">
+                                <span class="center-menubar-left-icon"> 
+                                    <img src="images/body-menubar-left.png">
+                                </span>
+                                <div class="center-menu-bar-contents">
+                                    <p class="menu-val">All Entries</p>
+                                    <span class="center-menu-bar-items">
+                                        <span id="active" class="tab-1">
+                                            <span class="tab-img">
+                                                <img src="images/body-menubar-active-left.png">
+                                            </span>
+                                            <span class="tab-title">
+                                                <span class="tab-val">All Members</span>
+                                            </span>
+                                            <span class="tab-img">
+                                                <img src="images/body-menubar-active-right.png">
+                                            </span>
+                                        </span> 
+                                        <span class="tab-2">
+                                            <span class="tab-img">
+                                                <img src="images/body-menubar-inactive-left.png">
+                                            </span> 
+                                        <span class="tab-title">
+                                            <span class="tab-val">Friends</span>
+                                        </span> 
+                                        <span class="tab-img">
+                                            <img src="images/body-menubar-inactive-right.png">
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="center-menu-bar-right">
+                                <div class="center-menu-bar-contents">
+                                    <p class="menu-val">Subscribed</p>
+                                    <span class="center-menu-bar-items">
+                                        <span class="tab-3">
+                                            <span class="tab-img">
+                                                <img src="images/body-menubar-inactive-left.png">
+                                            </span>
+                                            <span class="tab-title">
+                                                <span class="tab-val">New Entries</span>
+                                            </span> 
+                                            <span class="tab-img">
+                                                <img src="images/body-menubar-inactive-right.png">
+                                            </span>
+                                        </span> 
+                                        <span class="tab-4">
+                                            <span class="tab-img">
+                                                <img src="images/body-menubar-inactive-left.png">
+                                            </span>
+                                            <span class="tab-title">
+                                                <span class="tab-val">New Comments</span>
+                                            </span>
+                                            <span class="tab-img">
+                                                <img src="images/body-menubar-inactive-right.png"/>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                                <span class="center-menubar-right-icon">
+                                    <img src="images/body-menubar-right.png"/>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="horizontal-line"></div>
+                    </div>
+
+                    <!-- Not, let's add user with their entries -->
+                    <ul class="center-menu-list">
+                        <li>
+                            <div class="list-content-wrapper clearfix">
+                                <span class="main-container-img">
+                                    <img src="images/user1.png" />
+                                </span> 
+                                <div class="list-content">
+                                    <span class="list-title">Day for Night by François Truffaut, a ground breaking film</span>
+                                    <div class="list-row2">
+                                        <span>by</span>
+                                        <span class="blue-text">Alan Coe</span>
+                                        <span>|</span>
+                                        <span>February 10, 2012</span>
+                                        <span>|</span>
+                                        <span class="green-text">Subscribed</span>
+                                    </div>
+                                    <div class="list-row3">
+                                        <span>From Topic Box:</span>
+                                        <span class="blue-text">My Favourite Movies</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-horizontal-line"></div>
+                        </li>
+                        <li>
+                            <div class="list-content-wrapper clearfix">
+                                <span class="main-container-img">
+                                    <img src="images/user2.png" />
+                                </span> 
+                                <div class="list-content">
+                                    <span class="blue-text">NEW ENTRY!</span>
+                                    <div class="list-title">Blade Runner, The Director's Cut</div>
+                                    <div class="list-row2">
+                                        <span>by</span>
+                                        <span class="blue-text">Mary Pilot</span>
+                                        <span>|</span>
+                                        <span>February 8, 2012</span>
+                                    </div>
+                                    <div class="list-row3">
+                                        <span>From Topic Box:</span>
+                                        <span class="blue-text">Behind the Scene</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-horizontal-line"></div>
+                        </li>
+                        <li>
+                            <div class="list-content-wrapper clearfix">
+                                <span class="main-container-img">
+                                    <img src="images/user3.png" />
+                                </span> 
+                                <div class="list-content">
+                                    <span class="blue-text">NEW COMMENT!</span>
+                                    <div class="list-title">The Best French Restaurant in Chicago?</div>
+                                    <div class="list-row2">
+                                        <span>by</span>
+                                        <span class="blue-text">Jim Roy</span>
+                                        <span>|</span>
+                                        <span>February 7, 2012</span>
+                                    </div>
+                                    <div class="list-row3">
+                                        <span>From Topic Box:</span>
+                                        <span class="blue-text">Chicago Restaurants Reviews</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-horizontal-line"></div>
+                        </li>
+                        <li>
+                            <div class="list-content-wrapper clearfix">
+                                <span class="main-container-img">
+                                    <img src="images/user4.png" />
+                                </span> 
+                                <div class="list-content">
+                                    <span class="list-title">The Meaning of Night. Dark Book but incredibly well written.</span>
+                                    <div class="list-row2">
+                                        <span>by</span>
+                                        <span class="blue-text">John-Peter Moïse</span>
+                                        <span>|</span>
+                                        <span>February 7, 2012</span>
+                                        <span>|</span>
+                                        <span class="green-text">Subscribed</span>
+                                    </div>
+                                    <div class="list-row3">
+                                        <span>From Topic Box:</span>
+                                        <span class="blue-text">Books Read & Books to Read</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-horizontal-line"></div>
+                        </li>
+                        <li>
+                            <div class="list-content-wrapper clearfix">
+                                <span class="main-container-img">
+                                    <img src="images/user5.png" alt="">
+                                </span> 
+                                <div class="list-content">
+                                    <div id="red-text">TOPIC BOX INVITE!</div>
+                                    <div class="list-title">Pea Pesto</div>
+                                    <div class="list-row2">
+                                        <span>by</span>
+                                        <span class="blue-text">Marianne Gig</span>
+                                        <span>|</span>
+                                        <span>February 6, 2012</span>
+                                    </div>
+                                    <div class="list-row3">
+                                        <span>From Topic Box:</span>
+                                        <span class="blue-text">Favourite Recipes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-horizontal-line"></div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Body part (Center Contents) ends -->
+
+                <!-- Body part (Right Contents) -->
+                <div class="main-contents-right">
+                    <div class="list-topic">Video Tutorials</div>
+                    <ul class="list-contents" id="video-tutorial-container">
+                        <li>
+                            <div class="search-list">Overview of TuTangle</div>
+                        </li>
+                        <li>
+                            <div class="search-list">Searching the Site</div>
+                        </li>
+                        <li>
+                            <div class="search-list">Previous & Saved Searches</div>
+                        </li>
+                        <li>
+                            <div class="search-list">The Topic Box Page</div>
+                        </li>
+                        <li>
+                            <div class="search-list">Creating a Topic Box</div>
+                        </li>
+                        <li>
+                            <div class="search-list">View Topic Box Entries</div>
+                        </li>
+                        <li>
+                            <div class="search-list">Creating an Entry</div>
+                        </li>
+                        <li>
+                            <div class="search-list">Privacy Settings</div>
+                        </li>
+                        <li>
+                            <div class="search-list">Co-Authoring</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- main content ends -->
+
+        <!-- Displayed only in small screen -->
+        <div class="contents clearfix">
+            <div class="small-screen-left">
+                <div class="top-small-screen-left">
+                    <div class="list-topic">Recent Searches</div>
+                    <ul class="list-contents">
+                        <li>
+                            <div class="search-list clearfix">
+                                <span class="vertical-list">Nick Cave and the Bad Seeds</span>
+                                <img src="images/download-icon.png" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="search-list clearfix">
+                                <span class="vertical-list">African Animals</span>
+                                <img src="images/download-icon.png" />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom-small-screen-left">
+                    <div class="list-topic">Recent Searches</div>
+                    <ul class="list-contents">
+                        <li>
+                            <div class="search-list clearfix">
+                                <span class="vertical-list">
+                                    Different versions of the Tristan Und Isolde Prelude
+                                </span>
+                                <img src="images/3line-icon.png" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="search-list clearfix">
+                                <span class="vertical-list">Music</span>
+                                <img src="images/3line-icon.png" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="search-list clearfix">
+                                <span class="vertical-list">Guitar</span>
+                                <img src="images/3line-icon.png"/>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="search-list clearfix">
+                                <span class="vertical-list">Bob Cohen</span>
+                                <img src="images/3line-icon.png"/>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="search-list clearfix">
+                                <span class="vertical-list">Mark Schnack</span>
+                                <img src="images/3line-icon.png"/>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="search-list clearfix">
+                                <span class="vertical-list">Jefferson Dickey</span>
+                                <img src="images/3line-icon.png" />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="small-screen-right clearfix">
+                <div class="list-topic">Video Tutorials</div>
+                <ul class="list-contents" id="vid">
+                    <li>
+                        <div class="search-list">Overview of TuTangle</div>
+                    </li>
+                    <li>
+                        <div class="search-list">Searching the Site</div>
+                    </li>
+                    <li>
+                        <div class="search-list">Previous & Saved Searches</div>
+                    </li>
+                    <li>
+                        <div class="search-list">The Topic Box Page</div>
+                    </li>
+                    <li>
+                        <div class="search-list">Creating a Topic Box</div>
+                    </li>
+                    <li>
+                        <div class="search-list">View Topic Box Entries</div>
+                    </li>
+                    <li>
+                        <div class="search-list">Creating an Entry</div>
+                    </li>
+                    <li>
+                        <div class="search-list">Privacy Settings</div>
+                    </li>
+                    <li>
+                        <div class="search-list">Co-Authoring</div>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+        
+
+        <!-- Footer Contents -->
+        <div class="footer-container">
+            <div class="contents clearfix">
+                <div class="footer-left">
+                    <span>About Us</span>
+                    <span>•</span>
+                    <span>Contact Us</span>
+                    <span>•</span>
+                    <span>Terms of Use</span>
+                    <span>•</span>
+                    <span>Privacy Policy</span>
+                    <span>•</span>
+                    <span>Feedback</span>
+                </div>
+                <div class="footer-right">
+                    <p>© TuTangle 2013</p>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Contents ends -->
+    </div>
+</div>
+
+<script type="text/javascript">
+    var navLinks = document.getElementById("navLinks");
+    var dropdown = document.getElementById("dropdown");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+
+    function showMenu2(){
+        dropdown.style.right = "0";
+    }
+
+    function hideMenu2(){
+        dropdown.style.right = "-200px";
+    }
+
+</script>
+</body>
+</html>
