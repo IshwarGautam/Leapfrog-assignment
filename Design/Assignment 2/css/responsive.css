@@ -1,14 +1,21 @@
 /* Media query defined for following screen width*/
-/*1. min-width: 0px
+/*1. min-width: 0px (that means screen having width less than 660px)
 2. min-width: 660px
 3. min-width: 817px
 4. min-width: 940px*/
+
+/*No any contents are hidden*/
+/*1. Home, Settings and Log Out get opened when clicking dropdown like icon
+2. Navbar get opened when clicking 3line-bars icon
+3. Recent Searches and Video tutorials are displayed below main content in small screen
+4. Also Recent Searches and Video tutorials are displayed one per row in extra small screen*/
+
 
 
 /* screen less than 640px width*/
 @media(min-width: 0px){
 
-	.main-contents-left{
+	.main-contents-left{ /*This content will displayed below of main content*/
 		display: none;
 	}
 
