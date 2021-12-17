@@ -3,12 +3,10 @@ body{
 	font-family: Inter;
 }
 
+
+/*1. Mobile View*/
 .header{
 	background-color: #f3fcf7;
-}
-
-.header:hover{
-	background-color: #f3f888;
 }
 
 .logo{
@@ -144,13 +142,9 @@ nav .fa{
 	font-weight: 900;
 	font-size: 15px;
 }
-.light-letter{
-	color: #c3c6c8;
-	font-size:15px;
-}
 
 .div1{
-	width:80%;
+	width:90%;
 	text-align: center;
 }
 
@@ -222,6 +216,9 @@ nav .fa{
 	margin-top:-395px;
 	position: relative;
 	margin-bottom: 57px;
+	background-color: #F0F1EC;
+	width:320px;
+	height:413px;
 }
 
 .benefit-title{
@@ -505,4 +502,268 @@ svg{
 
 .last-content{
 	margin-bottom: 31px;
+}
+
+
+
+
+
+
+/*2. Tablet View*/
+@media(min-width: 900px){
+
+	.nav-links, .nav-links ul, .nav-links ul li, .nav-links ul li a, .nav-links ul li a:hover{
+		all:unset;
+	}
+
+	div .fa{
+		display: none;
+	}
+
+	/*.button{
+		margin: 0 278px 47px 277px;
+		cursor: pointer;
+	}*/
+
+	nav{
+		float:right;
+	}
+
+	.top-menu{
+		padding-top: 10px;
+	}
+
+	.nav-links ul li{
+		list-style: none;
+		display: inline-block;
+		margin-left:35px;
+		cursor: pointer;
+	}
+
+	.nav-links ul li a{
+		color: #1D1D1F; 
+		text-decoration: none;
+		font-size: 16px;
+	}
+
+	.active{
+		color:#06C167;
+	}
+
+	.nav-links ul li::after{
+		content: '';
+		width: 0%;
+		height:  2px;
+		background: #ffcc22;
+		display: block;
+		margin: auto;
+		transition: 0.5s;
+	}
+
+	.nav-links ul li:hover::after{
+		width: 100%;
+	}
+
+	.div2{
+		float:left;
+		width:25%;
+	}
+
+	.div3{
+		float:left;
+		width:50%;
+	}
+
+	.div4{
+		float:right;
+		width: 25%;
+		margin-top:-30px;
+	}
+
+
+	.wrapper-container1{
+		display: inline-block;
+		width:80%;
+	}
+
+	.wrapper-container1 .image-container{
+		float:left;
+		width: 45%;
+		margin-left:70px;
+	}
+
+	.wrapper-container1 .benefit-container{
+		float:right;
+		width:45%;
+		margin-top: 85px;
+		text-align: center;
+	}
+
+	/*.benefit-container{
+		float:right;
+		width:45%;
+		margin-top: 85px;
+		text-align: left;
+	}
+
+	.list-container ul {
+	  display: table; 
+	  margin: 0;
+	  text-align: left;
+	}
+
+	.image-container .rectangle-2{
+		all:revert;
+	}
+
+	.image1 img{
+		width: 445px;
+		height:513px;
+		margin-left:48px;
+
+	}
+
+	.image-container .rectangle-2{
+		background-color: #F3FAFB;
+		width: 541px;
+		height: 608px;
+		margin-top:-517px;
+	}*/
+
+	.wrapper-container2{
+		display: inline-block;
+		width:80%;
+	}
+
+	.wrapper-container2 .lemon-image{
+		float:right;
+		width: 40%;
+	}
+
+	.wrapper-container2 .counter-container{
+		float:left;
+		width:50%;
+		margin-top: 85px;
+		margin-left:50px;
+	}
+
+	.counter-list .sold_product{
+		float:left;
+		width: 25%;
+	}
+
+	.counter-list .feedback{
+		float: left;
+		width: 50%;
+	}
+
+	.counter-list .store{
+		float:right;
+		width:25%;
+	}
+
+	.wrapper-container3{
+		width:80%;
+	}
+
+	.sub-wrapper1{
+		float:left;
+		width: 50%;
+	}
+
+	.sub-wrapper1 .image-loader img{
+		float:right;
+		width:292.5px;
+		height: 292.5px;
+	}
+
+	.wrapper-container3 .block{
+		float:left;
+		padding-bottom:8px;
+		width:292.5px;
+		height: 292.5px;
+	}
+
+	.wrapper-container4{
+		width:80%;
+	}
+
+	.sub-wrapper2{
+		float:right;
+		width: 50%;
+	}
+
+	.sub-wrapper2 .image-loader img{
+		float:left;
+		width:292.5px;
+		height: 292.5px;
+	}
+
+	.wrapper-container4 .block{
+		float:right;
+		padding-bottom:8px;
+		width:292.5px;
+		height: 292.5px;
+	}
+
+	.wrapper-container5{
+		width:80%;
+	}
+
+	.sub-wrapper3{
+		float:left;
+		width: 50%;
+	}
+
+	.sub-wrapper3 .image-loader img{
+		float:right;
+		width:292.5px;
+		height: 292.5px;
+	}
+
+	.wrapper-container5 .block{
+		float:left;
+		padding-bottom:8px;
+		width:292.5px;
+		height: 292.5px;
+	}
+
+	.wrapper-container6{
+		width:80%;
+	}
+
+	.sub-wrapper4{
+		float:right;
+		width: 50%;
+	}
+
+	.sub-wrapper4 .image-loader img{
+		float:left;
+		width:292.5px;
+		height: 292.5px;
+	}
+
+	.wrapper-container6 .block{
+		float:right;
+		padding-bottom:8px;
+		width:292.5px;
+		height: 292.5px;
+	}
+
+	.footer-menu-container{
+		display: inline-block;
+		width:80%;
+	}
+
+	#menu1{
+		width:48%;
+		float:left;
+	}
+
+	#menu2{
+		width:48%;
+		float:right;
+	}
+
+
 }

@@ -29,18 +29,21 @@
 		<section class="header">
 			<nav>
 				<a href="index.html">
-					<span class="logo">Foodies</span>
+					<div class="logo">Foodies</div>
 				</a>
-				<div class="nav-links" id="navLinks">
-					<i class="fa fa-times" onclick="hideMenu()"></i>	
-					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Service Us</a></li>
-						<li><a href="#">Our Company</a></li>
-						<li><a href="#">Pages</a></li>
-					</ul>
+				<div class="top-menu">
+					<div class="nav-links" id="navLinks">
+						<i class="fa fa-times" onclick="hideMenu()"></i>	
+						<ul>
+							<li><a href="#"><span class="active">Home</span></a></li>
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Service Us</a></li>
+							<li><a href="#">Our Company</a></li>
+							<li><a href="#">Pages</a></li>
+						</ul>
+					</div>
 				</div>
+				
 				<i class="fa fa-bars float-right" onclick="showMenu()"></i>
 			</nav>
 
@@ -88,15 +91,7 @@
 				<div class="div2 float-left">
 					<img src="images/div2.png" alt="icon">
 					<span class="logo-text">
-						<span class="bold-letter">L</span>
-						<span class="bold-letter">O</span>
-						<span class="bold-letter">G</span>
-						<span class="bold-letter">O</span>
-						<span class="light-letter">I</span>
-						<span class="light-letter">P</span>
-						<span class="light-letter">S</span>
-						<span class="light-letter">U</span>
-						<span class="light-letter">M</span>
+						<span class="bold-letter">LOGOIPSUM</span>
 					</span>
 				</div>	
 
@@ -152,234 +147,265 @@
 
 			<div class="horizontal-line"></div>
 
-			<div class="image-container">
-				<div class="image1"><img src="images/image1.png" alt="Food Image"></div>
-				<div class="rectangle-2"><img src="images/rectangle-2.png" alt="Rectangle Box"></div>
-			</div>
+			<div class="wrapper-container1">
+				<div class="image-container">
+					<div class="image1"><img src="images/image1.png" alt="Food Image"></div>
+					<div class="rectangle-2"></div>
+				</div>
 
-			<div class="benefit-container">
-				<div class="benefit-title">Our Benefit</div>
-				<div class="benefit-slogan">The More Healthy Food The Better</div>
+				<div class="benefit-container">
+					<div class="benefit-title">Our Benefit</div>
+					<div class="benefit-slogan">The More Healthy Food The Better</div>
 
-				<div class="list-container">
-					<ul>
-						<li class="benefit-list">
-							<img src="images/tick.png" alt="tick-icon">
-							<span>Be Alive With Veggie Food.</span>
-						</li>
+					<div class="list-container">
+						<ul>
+							<li class="benefit-list">
+								<img src="images/tick.png" alt="tick-icon">
+								<span>Be Alive With Veggie Food.</span>
+							</li>
 
-						<li class="benefit-list">
-							<img src="images/tick.png" alt="tick-icon">
-							<span>It's The Place To Be.</span>
-						</li>
+							<li class="benefit-list">
+								<img src="images/tick.png" alt="tick-icon">
+								<span>It's The Place To Be.</span>
+							</li>
 
-						<li class="benefit-list">
-							<img src="images/tick.png" alt="tick-icon">
-							<span>Nonstop Veggie Food</span>
-						</li>
+							<li class="benefit-list">
+								<img src="images/tick.png" alt="tick-icon">
+								<span>Nonstop Veggie Food</span>
+							</li>
 
-						<li class="benefit-list">
-							<img src="images/tick.png" alt="tick-icon">
-							<span>The Best Silk Dish in Town</span>
-						</li>
+							<li class="benefit-list">
+								<img src="images/tick.png" alt="tick-icon">
+								<span>The Best Silk Dish in Town</span>
+							</li>
 
-						<li class="benefit-list">
-							<img src="images/tick.png" alt="tick-icon">
-							<span>Truffles, Egg & Pumpkin Spice</span>
-						</li>
-					</ul>
+							<li class="benefit-list">
+								<img src="images/tick.png" alt="tick-icon">
+								<span>Truffles, Egg & Pumpkin Spice</span>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 
-			<div class="lemon-image">
-				<img src="images/image2.png" alt="Lemon Image">
-			</div>
-
-			<div class="benefit-container"> <!-- Another content but using same class name as before -->
-				<div class="benefit-title">Our Stars</div>
-				<div class="benefit-slogan">Veggie Food Goes On and Always On</div>
-			</div>
-
-			<div class="counter">
-				<div class="title">1,500</div>
-				<div class="desc">Sold Product</div>
-			</div>
-
-			<div class="counter">
-				<div class="title">500</div>
-				<div class="desc">Positive Feedback</div>
-			</div>
-
-			<div class="counter">
-				<div class="title">400</div>
-				<div class="desc">Official Store</div>
-			</div>
-
-			<div class="button btn-margin">
-				<div>
-					Get Special Promo
-					<span class="arrow"><img src="images/arrow.png" alt="arrow-icon"></span>
+			<div class="wrapper-container2">
+				<div class="lemon-image">
+					<img src="images/image2.png" alt="Lemon Image">
 				</div>
-			</div>
 
+				<div class="counter-container">
+					<div class="benefit-container"> <!-- Another content but using same class name as before -->
+						<div class="benefit-title">Our Stars</div>
+						<div class="benefit-slogan">Veggie Food Goes On and Always On</div>
+					</div>
+
+					<div class="counter-list clearfix">
+						<div class="counter sold_product">
+							<div class="title">1,500</div>
+							<div class="desc">Sold Product</div>
+						</div>
+
+						<div class="counter feedback">
+							<div class="title">500</div>
+							<div class="desc">Positive Feedback</div>
+						</div>
+
+						<div class="counter store">
+							<div class="title">400</div>
+							<div class="desc">Official Store</div>
+						</div>
+					</div>
+
+					<div class="button btn-margin">
+						<div>
+							Get Special Promo
+							<span class="arrow"><img src="images/arrow.png" alt="arrow-icon"></span>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			
+			
 			<div class="benefit-container"> <!-- Another content but using same class name as before -->
 				<div class="benefit-title">Our Features</div>
 				<div class="benefit-slogan">Variety Of Veggie Foods</div>
 			</div>
 
-
-			<div class="image-loader">
-				<img src="images/image3.png" alt="Image for Foodie">
-			</div>
-
-			<div class="block">
-				<div class="title">Veggies Are Forever</div>
-				<div class="desc">We offer the following services</div>
-				<div class="btn">
-					<a href="#">Discover now
-						<span class="arrow"><img src="images/arrow2.png" alt="arrow-icon"></span>
-					</a>
+			<div class="wrapper-container3">
+				<div class="sub-wrapper1">
+					<div class="image-loader">
+						<img src="images/image3.png" alt="Image for Foodie">
+					</div>
 				</div>
-			</div>
 
-			<div class="image-loader">
-				<img src="images/papaiya.png" alt="Papaiya">
-			</div>
-
-			<div class="block">
-				<div class="title">Good For Your Skin</div>
-				<div class="desc">We offer the following services</div>
-				<div class="btn">
-					<a href="#">Discover now
-						<span class="arrow"><img src="images/arrow2.png" alt="arrow-icon"></span>
-					</a>
+				<div class="block">
+					<div class="title">Veggies Are Forever</div>
+					<div class="desc">We offer the following services</div>
+					<div class="btn">
+						<a href="#">Discover now
+							<span class="arrow"><img src="images/arrow2.png" alt="arrow-icon"></span>
+						</a>
+					</div>
 				</div>
 			</div>
 
-			<div class="image-loader">
-				<img src="images/image4.png" alt="Image for Foodies">
-			</div>
-
-			<div class="block">
-				<div class="title">Veggie Food Groove</div>
-				<div class="desc">We offer the following services</div>
-				<div class="btn">
-					<a href="#">Discover now
-						<span class="arrow"><img src="images/arrow2.png" alt="arrow-icon"></span>
-					</a>
+			<div class="wrapper-container4">
+				<div class="sub-wrapper2">
+					<div class="image-loader">
+						<img src="images/papaiya.png" alt="Papaiya">
+					</div>
 				</div>
-			</div>
 
-			<div class="image-loader">
-				<img src="images/image5.png" alt="Image for Foodies">
-			</div>
-
-			<div class="block">
-				<div class="title">That Comes Close</div>
-				<div class="desc">We offer the following services</div>
-				<div class="btn">
-					<a href="#">Discover now
-						<span class="arrow"><img src="images/arrow2.png" alt="arrow-icon"></span>
-					</a>
+				<div class="block">
+					<div class="title">Good For Your Skin</div>
+					<div class="desc">We offer the following services</div>
+					<div class="btn">
+						<a href="#">Discover now
+							<span class="arrow"><img src="images/arrow2.png" alt="arrow-icon"></span>
+						</a>
+					</div>
 				</div>
 			</div>
+			
 
-			<div class="benefit-container"> <!-- Another content but using same class name as before -->
-				<div class="benefit-title product-margin">Our Product</div>
-				<div class="benefit-slogan">Most Popular Product</div>
-			</div>
+			
+			<div class="wrapper-container5">
+				<div class="sub-wrapper3">
+					<div class="image-loader">
+						<img src="images/image4.png" alt="Image for Foodies">
+					</div>
+				</div>
 
-			<div class="buy-product">
-				<div class="image">
-					<img src="images/banana.png" alt="Banana">
-				</div>
-				<div class="rating">
-					<img src="images/star.png" alt="rating">
-					<img src="images/star.png" alt="rating">
-					<img src="images/star.png" alt="rating">
-					<img src="images/star.png" alt="rating">
-					<img src="images/star.png" alt="rating">
-				</div>
-				<div class="title">Summer Veganie</div>
-				<div class="price">
-					<span class="price1"><del>$25</del></span>
-					<span class="price2">$29</span>
-				</div>
-				<div class="btn">
-					<a href="#">Bye Now
-						<span class="arrow"><img src="images/arrow2.png" alt="arrow-icon"></span>
-					</a>
+				<div class="block">
+					<div class="title">Veggie Food Groove</div>
+					<div class="desc">We offer the following services</div>
+					<div class="btn">
+						<a href="#">Discover now
+							<span class="arrow"><img src="images/arrow2.png" alt="arrow-icon"></span>
+						</a>
+					</div>
 				</div>
 			</div>
+			
+			<div class="wrapper-container6 clearfix">
+				<div class="sub-wrapper4">
+					<div class="image-loader">
+						<img src="images/image5.png" alt="Image for Foodies">
+					</div>
+				</div>
 
-			<div class="buy-product">
-				<div class="image">
-					<img src="images/papaiya-in-plate.png" alt="Papaiya">
-				</div>
-				<div class="rating">
-					<img src="images/star.png" alt="rating">
-					<img src="images/star.png" alt="rating">
-					<img src="images/star.png" alt="rating">
-					<img src="images/star.png" alt="rating">
-					<img src="images/star.png" alt="rating">
-				</div>
-				<div class="title">Greanie Seafood</div>
-				<div class="price">
-					<span class="price1"><del>$25</del></span>
-					<span class="price2">$29</span>
-				</div>
-				<div class="btn">
-					<a href="#">Bye Now
-						<span class="arrow"><img src="images/arrow2.png" alt="arrow-icon"></span>
-					</a>
+				<div class="block">
+					<div class="title">That Comes Close</div>
+					<div class="desc">We offer the following services</div>
+					<div class="btn">
+						<a href="#">Discover now
+							<span class="arrow"><img src="images/arrow2.png" alt="arrow-icon"></span>
+						</a>
+					</div>
 				</div>
 			</div>
 
-			<div class="buy-product">
-				<div class="image">
-					<img src="images/coconut.png" alt="coconut">
+			<div class="buy-food-container">
+				<div class="benefit-container"> <!-- Another content but using same class name as before -->
+					<div class="benefit-title product-margin">Our Product</div>
+					<div class="benefit-slogan">Most Popular Product</div>
 				</div>
-				<div class="rating">
-					<img src="images/star.png" alt="rating">
-					<img src="images/star.png" alt="rating">
-					<img src="images/star.png" alt="rating">
-					<img src="images/star.png" alt="rating">
-					<img src="images/star.png" alt="rating">
-				</div>
-				<div class="title">Fresh Vegetable</div>
-				<div class="price">
-					<span class="price1"><del>$25</del></span>
-					<span class="price2">$29</span>
-				</div>
-				<div class="btn">
-					<a href="#">Bye Now
-						<span class="arrow"><img src="images/arrow2.png" alt="arrow-icon"></span>
-					</a>
-				</div>
-			</div>
 
-			<div class="buy-product">
-				<div class="image">
-					<img src="images/orange.png" alt="orange">
+				<div class="buy-product">
+					<div class="image">
+						<img src="images/banana.png" alt="Banana">
+					</div>
+					<div class="rating">
+						<img src="images/star.png" alt="rating">
+						<img src="images/star.png" alt="rating">
+						<img src="images/star.png" alt="rating">
+						<img src="images/star.png" alt="rating">
+						<img src="images/star.png" alt="rating">
+					</div>
+					<div class="title">Summer Veganie</div>
+					<div class="price">
+						<span class="price1"><del>$25</del></span>
+						<span class="price2">$29</span>
+					</div>
+					<div class="btn">
+						<a href="#">Bye Now
+							<span class="arrow"><img src="images/arrow2.png" alt="arrow-icon"></span>
+						</a>
+					</div>
 				</div>
-				<div class="rating">
-					<img src="images/star.png" alt="rating">
-					<img src="images/star.png" alt="rating">
-					<img src="images/star.png" alt="rating">
-					<img src="images/star.png" alt="rating">
-					<img src="images/star.png" alt="rating">
+
+				<div class="buy-product">
+					<div class="image">
+						<img src="images/papaiya-in-plate.png" alt="Papaiya">
+					</div>
+					<div class="rating">
+						<img src="images/star.png" alt="rating">
+						<img src="images/star.png" alt="rating">
+						<img src="images/star.png" alt="rating">
+						<img src="images/star.png" alt="rating">
+						<img src="images/star.png" alt="rating">
+					</div>
+					<div class="title">Greanie Seafood</div>
+					<div class="price">
+						<span class="price1"><del>$25</del></span>
+						<span class="price2">$29</span>
+					</div>
+					<div class="btn">
+						<a href="#">Bye Now
+							<span class="arrow"><img src="images/arrow2.png" alt="arrow-icon"></span>
+						</a>
+					</div>
 				</div>
-				<div class="title">Fresh Meatyus</div>
-				<div class="price">
-					<span class="price1"><del>$25</del></span>
-					<span class="price2">$29</span>
+
+				<div class="buy-product">
+					<div class="image">
+						<img src="images/coconut.png" alt="coconut">
+					</div>
+					<div class="rating">
+						<img src="images/star.png" alt="rating">
+						<img src="images/star.png" alt="rating">
+						<img src="images/star.png" alt="rating">
+						<img src="images/star.png" alt="rating">
+						<img src="images/star.png" alt="rating">
+					</div>
+					<div class="title">Fresh Vegetable</div>
+					<div class="price">
+						<span class="price1"><del>$25</del></span>
+						<span class="price2">$29</span>
+					</div>
+					<div class="btn">
+						<a href="#">Bye Now
+							<span class="arrow"><img src="images/arrow2.png" alt="arrow-icon"></span>
+						</a>
+					</div>
 				</div>
-				<div class="btn">
-					<a href="#">Bye Now
-						<span class="arrow"><img src="images/arrow2.png" alt="arrow-icon"></span>
-					</a>
+
+				<div class="buy-product">
+					<div class="image">
+						<img src="images/orange.png" alt="orange">
+					</div>
+					<div class="rating">
+						<img src="images/star.png" alt="rating">
+						<img src="images/star.png" alt="rating">
+						<img src="images/star.png" alt="rating">
+						<img src="images/star.png" alt="rating">
+						<img src="images/star.png" alt="rating">
+					</div>
+					<div class="title">Fresh Meatyus</div>
+					<div class="price">
+						<span class="price1"><del>$25</del></span>
+						<span class="price2">$29</span>
+					</div>
+					<div class="btn">
+						<a href="#">Bye Now
+							<span class="arrow"><img src="images/arrow2.png" alt="arrow-icon"></span>
+						</a>
+					</div>
 				</div>
 			</div>
+			
 
 			<div class="bottom-body">
 				<div class="benefit-slogan">Veggie Foods? Ingredients You Want To Try</div>
@@ -416,21 +442,24 @@
 				</div>
 			</div>
 
-			<div class="footer-menu">
-				<div class="menu-header">About Us</div>
-				<div class="content">About Us</div>
-				<div class="content">Service Us</div>
-				<div class="content">Contact</div>
-				<div class="content">Company</div>
-			</div>
+			<div class="footer-menu-container">
+				<div class="footer-menu" id="menu1">
+					<div class="menu-header">About Us</div>
+					<div class="content">About Us</div>
+					<div class="content">Service Us</div>
+					<div class="content">Contact</div>
+					<div class="content">Company</div>
+				</div>
 
-			<div class="footer-menu">
-				<div class="menu-header">Company</div>
-				<div class="content">Partnership</div>
-				<div class="content">Terms of Use</div>
-				<div class="content">Privacy</div>
-				<div class="content">Sitemap</div>
+				<div class="footer-menu" id="menu2">
+					<div class="menu-header">Company</div>
+					<div class="content">Partnership</div>
+					<div class="content">Terms of Use</div>
+					<div class="content">Privacy</div>
+					<div class="content">Sitemap</div>
+				</div>
 			</div>
+			
 
 			<div class="get-in-touch">
 				<div class="footer-menu">
