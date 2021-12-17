@@ -1,0 +1,508 @@
+/*CSS for heading section*/
+body{
+	font-family: Inter;
+}
+
+.header{
+	background-color: #f3fcf7;
+}
+
+.header:hover{
+	background-color: #f3f888;
+}
+
+.logo{
+	position: absolute;
+	left: 8%;
+	right: 60%;
+	top: 0.23%;
+	bottom: 99.41%;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 39px;
+	color: #06C167;
+}
+
+.nav-links{
+	position: fixed;
+	background: #212329;
+	height: 100vh;
+	width: 200px;
+	top: 0;
+	right: -200px ;
+	text-align: left;
+	z-index: 2;
+	transition: 1s; 
+}
+
+.nav-links ul{
+	padding: 30px;
+}
+
+.nav-links ul li{
+	display: block;
+	padding: 8px 12px;
+}
+
+
+.nav-links ul li a{
+	color: #fff; 
+	text-decoration: none;
+	font-size: 18px;
+}
+
+.nav-links ul li a:hover{
+	background-color: green;
+}
+
+nav .fa{
+	display: inline-block;
+	color: #23c879;
+	font-size: 25px;
+	cursor: pointer;
+	border: 2px solid #23c879;
+	padding:8px;
+}
+
+.heading{
+	font-weight: 600;
+	line-height: 62px;
+	text-align: center;
+	font-size: 51px;
+	color:#1D1D1F;
+	padding-top: 115px;
+}
+
+.paragraph{
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 22px;
+	text-align: center;
+	color: #1D1D1F;
+	padding: 25px 33px 53px 26px;
+}
+
+.button{
+	background: #06C167;
+	margin: 0 28px 47px 27px;
+	cursor: pointer;
+}
+
+.button:hover, .button2:hover, .subscribe:hover{
+	background: #06C777;
+}
+
+.button div{
+	color:#ffffff;
+	padding-top:24px;
+	padding-bottom: 25px;
+	text-align: center;
+}
+
+.image{
+	text-align: center;
+	position: relative;
+}
+
+.next-btn{
+	background: #ffffff;
+	width: 250px;
+	text-align: center;
+	padding-top: 19.71px;
+	padding-bottom: 18.71px;
+	border-radius:25px;
+	margin-top:-120px;
+	z-index: 2;
+	font-size: 18px;
+	font-weight: 500;
+	position: relative;
+}
+
+.next-btn2{
+	background: #ffffff;
+	width: 250px;
+	padding-top: 9.71px;
+	padding-bottom: 8.71px;
+	border-radius:25px;
+	margin-top:10px;
+	font-size: 18px;
+	font-weight: 500;
+	position: relative;
+}
+
+.btn-text{
+	position: relative;
+	top:-10px;
+}
+
+
+/* Body Section*/
+.bold-letter{
+	color: #c3c6c8;
+	font-weight: 900;
+	font-size: 15px;
+}
+.light-letter{
+	color: #c3c6c8;
+	font-size:15px;
+}
+
+.div1{
+	width:80%;
+	text-align: center;
+}
+
+.div4{
+	display: inline-block;
+	width:100%;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.logo-text{
+	position: relative;
+	top:-5px;
+}
+
+.horizontal-line{
+	border: 1.5px solid #707070;
+	width:80%;
+	height: 2px;
+	margin-bottom: 59.5px;
+	margin-top:63.04px;
+	opacity: 15%;
+}
+
+.tools-container{
+	width:80%;
+}
+
+.tools-container:hover{
+	background: #FFFAF0;
+}
+
+.tool{
+	text-align:center;
+	width:40%;
+}
+
+.tool-title{
+	font-size:18px;
+	margin-top:21px;
+	margin-bottom: 7px;
+}
+
+.tool-desc{
+	font-size:14px;
+	opacity: 0.75;
+}
+
+.overlap-image{
+	margin-top:-50px;
+	margin-left: 2px;
+}
+
+.set-padding{
+	padding-bottom: 104px;
+}
+
+.image-container{
+	text-align: center;
+	display: block;
+}
+
+.image1{
+	z-index:2;
+	position:relative;
+}
+
+.rectangle-2{
+	margin-top:-395px;
+	position: relative;
+	margin-bottom: 57px;
+}
+
+.benefit-title{
+	font-size: 15px;
+	font-weight: 500;
+	margin-bottom: 13px;
+}
+
+.benefit-slogan{
+	font-size:35px;
+	font-weight: 500;
+	line-height: 42px;
+	margin-bottom: 52px;
+}
+
+.benefit-container{
+	text-align: center;
+}
+
+.benefit-list span{
+	font-size:16px;
+	margin-left: 22px;
+	top:-5px;
+	position: relative;
+}
+
+.list-container ul {
+  display: table; 
+  margin: 0 auto;
+  text-align: left;
+}
+
+.lemon-image{
+	text-align: center;
+	margin-top:70px;
+	margin-bottom: 67px;
+}
+
+.counter .title{
+	font-size:40px;
+	font-weight: 600;
+	text-align: center;
+	color: #06C167;
+	margin-bottom: 16px;
+}
+
+.counter .desc{
+	font-size:15px;
+	font-weight: 400;
+	text-align:center;
+	opacity: 65%;
+	margin-bottom: 39px;
+}
+
+.btn-margin{
+	margin-bottom: 129px;
+}
+
+.image-loader{
+	text-align: center;
+}
+
+.block{
+	background: #F0F1EC;
+	width: 80%;
+	border:1px solid green;
+}
+
+.block .title{
+	font-size:32px;
+	font-weight: 500;
+	padding: 37.5px 54px 25px 38px;
+}
+
+.block .desc{
+	font-size:16px;
+	font-weight: 400;
+	padding: 0 88px 48.5px 38px;
+}
+
+.block .btn{
+	font-size: 15px;
+	font-weight: 500;
+	padding-bottom: 34.5px;
+	padding-left:37.5px;
+}
+
+.block .btn a{
+	text-decoration: none;
+	color: #06C167;
+}
+
+.block:hover{
+	border:1px solid blue;
+	opacity: 90%;
+}
+
+.product-margin{
+	margin-top:129.75px;
+}
+
+.buy-product{
+	border:1.5px solid green;
+	text-align: center;
+	width:80%;
+	margin-bottom: 37px;
+}
+
+.buy-product:hover{
+	background-color: #f3f888;
+	border:1.5px solid blue;
+}
+
+.buy-product .image{
+	padding-top:25px;
+	padding-bottom: 5px;
+}
+
+.buy-product .title{
+	font-size: 20px;
+	font-weight: 400;
+	padding-top:21.42px;
+}
+
+.price1{
+	font-size: 20px;
+	font-weight: 600;
+	color: #767675;
+	margin-right: 8px;
+	display: inline-block;
+}
+
+.price2{
+	font-size:20px;
+	font-weight: 400;
+	color: #06C167;
+	padding-top:25px;
+	padding-bottom: 29px;
+	display: inline-block;
+}
+
+.buy-product .btn{
+	width: 60%;
+	font-size: 16px;
+	font-weight: 400;
+	border:2.5px solid #06C167;
+	padding: 18px 0 20px 0;
+	margin-bottom: 29px;
+	cursor: pointer;
+}
+
+.buy-product .btn:hover{
+	background-color: #FAF0E6;
+}
+
+
+.buy-product .btn a{
+	text-decoration: none;
+	color: #06C167;
+}
+
+.buy-product .btn .arrow{
+	margin-left: 31.19px;
+}
+
+.bottom-body{
+	margin-top: 31px;
+	background: url(../images/image6.png);
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.bottom-body .benefit-slogan{
+	width:80%;
+	color:white;
+	padding-top:102px;
+}
+
+.button2{
+	background: #06C167;
+	cursor: pointer;
+	color:white;
+	width:70%;	
+	padding-top:29px;
+	padding-bottom: 31px;
+}
+
+.bottom-body-btn{
+	padding-bottom: 100px;
+}
+
+/*Footer Section*/
+.footer{
+	text-align: center;
+}
+
+.footer-top{
+	margin-top:65px;
+	margin-bottom: 79.02px;
+}
+
+.footer .title{
+	font-size: 32px;
+	font-weight: 500;
+	margin-bottom: 23px;
+}
+
+.footer .desc{
+	width: 80%;
+	font-size: 16px;
+	font-weight: 400;
+	margin-bottom: 36.6px;
+}
+
+svg{
+	margin-right:26px;
+	cursor: pointer;
+}
+
+.footer-menu{
+	margin-bottom: 80px;
+}
+
+.menu-header{
+	font-size:24px;
+	font-weight: 500;
+	margin-bottom: 41px;
+}
+
+.footer-menu .content{
+	font-size: 15px;
+	font-weight: 400;
+	margin-top:16px;
+	cursor: pointer;
+}
+
+.footer-menu .set-cursor{
+	cursor: unset;
+}
+
+.email, .subscribe{
+	background: #F0F1EC;
+	width: 80%;
+	margin-top:10px;
+}
+
+.email input, .subscribe div{
+	padding-top:18px;
+	padding-bottom: 19px;
+	background: transparent;
+	border-style: none;
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.subscribe{
+	background:#06C167;
+	color:white;
+	cursor: pointer;
+}
+
+.subscribe div{
+	font-weight: 500;
+}
+
+.email-margin{
+	margin-top:-40px;
+}
+
+.get-in-touch{
+	margin-bottom: 81px;
+}
+
+.copyright{
+	font-size:16px;
+	font-weight: 400;
+	color: #1D1D1F;
+}
+
+.last-content{
+	margin-bottom: 31px;
+}
