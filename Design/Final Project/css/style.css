@@ -11,15 +11,13 @@ body{
 
 .logo{
 	position: absolute;
-	left: 8%;
-	right: 60%;
-	top: 0.23%;
-	bottom: 99.41%;
+	left: 9.38%;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 32px;
 	line-height: 39px;
 	color: #06C167;
+	padding:10px;
 }
 
 .nav-links{
@@ -54,6 +52,11 @@ body{
 	background-color: green;
 }
 
+
+nav{
+	padding:15px;
+}
+
 nav .fa{
 	display: inline-block;
 	color: #23c879;
@@ -61,6 +64,10 @@ nav .fa{
 	cursor: pointer;
 	border: 2px solid #23c879;
 	padding:8px;
+}
+
+.top-menu{
+	margin-top:10px;
 }
 
 .heading{
@@ -71,6 +78,7 @@ nav .fa{
 	color:#1D1D1F;
 	padding-top: 115px;
 }
+
 
 .paragraph{
 	font-style: normal;
@@ -143,17 +151,30 @@ nav .fa{
 	font-size: 15px;
 }
 
-.div1{
-	width:90%;
-	text-align: center;
-}
-
-.div4{
+.logoipsum-container{
 	display: inline-block;
 	width:100%;
-	text-align: center;
-	margin-top: 30px;
 }
+
+.div1{
+	float:left;
+	margin-left:10px;
+}
+
+
+.div2{
+	float:right;
+	right: 0px;
+}
+
+.div3{
+	text-align: center;
+	display: inline-block;
+	margin-top:40.91px;
+	width: 100%;
+
+}
+
 
 .logo-text{
 	position: relative;
@@ -420,13 +441,14 @@ nav .fa{
 	margin-bottom: 79.02px;
 }
 
-.footer .title{
+.footer-top .title{
 	font-size: 32px;
 	font-weight: 500;
 	margin-bottom: 23px;
+	color: #06C167;
 }
 
-.footer .desc{
+.footer-top .desc{
 	width: 80%;
 	font-size: 16px;
 	font-weight: 400;
@@ -520,11 +542,6 @@ svg{
 		display: none;
 	}
 
-	/*.button{
-		margin: 0 278px 47px 277px;
-		cursor: pointer;
-	}*/
-
 	nav{
 		float:right;
 	}
@@ -564,20 +581,28 @@ svg{
 		width: 100%;
 	}
 
+
+	.div1, .div2, .div3{
+		all:revert;
+	}
+
+	.logoipsum-container{
+		width: 100%;
+	}
+
+	.div1{
+		float:left;
+		width:40%;
+	}
+
 	.div2{
 		float:left;
-		width:25%;
+		width:40%;
 	}
 
 	.div3{
-		float:left;
-		width:50%;
-	}
-
-	.div4{
 		float:right;
-		width: 25%;
-		margin-top:-30px;
+		width: 20%;
 	}
 
 
@@ -631,7 +656,7 @@ svg{
 	}*/
 
 	.wrapper-container2{
-		display: inline-block;
+		display: table;
 		width:80%;
 	}
 
@@ -750,6 +775,21 @@ svg{
 		height: 292.5px;
 	}
 
+	.bottom-body{
+		background: url(../images/image8.png);
+		width: 90%;
+		height: 459px;
+	}
+
+	.bottom-body .benefit-slogan{
+		font-size: 60px;
+		line-height: 73px;
+	}
+
+	.bottom-body .bottom-body-btn{
+		width:30%;
+	}
+
 	.footer-menu-container{
 		display: inline-block;
 		width:80%;
@@ -764,6 +804,263 @@ svg{
 		width:48%;
 		float:right;
 	}
+}
 
 
+/*2. Desktop View*/
+@media(min-width: 1200px){
+
+	.subheader{
+		display: inline-block;
+	}
+
+	.heading, .paragraph{
+		all:revert;
+	}
+
+	.header{
+		height: 610px;
+		position: relative;
+	}
+
+
+	.heading{
+		font-weight: 600;
+		font-size: 40px;
+		padding: 191px 0 11px 135px;
+	}
+
+	.paragraph{
+		font-size: 16px;
+		margin-left:135px;
+		opacity: 75%;
+		margin-bottom: 30px;
+	}
+
+	.visual-content .image img{
+		width: 468px;
+		height: 634px; 
+		position: relative;
+	}
+
+	.starter{
+		float: left;
+		width:48%;
+	}
+
+	.visual-content{
+		width: 52%
+		float: right;
+		margin-right: 50px;
+		position: static;
+	}
+
+	.button{
+		margin-left:135px;
+		padding-right: -50px;
+		padding-left: -50px;
+		width: 40%;
+		cursor: pointer;
+	}
+
+	nav{
+		margin-bottom: 36px;
+		margin-right: 80px;
+		cursor: pointer;
+	}
+
+	.nav-links ul li{
+		display: inline-block;
+	}
+
+	.next-btn{
+		/*margin-top:-350px;
+		margin-right:400px;
+*/		position: absolute;
+		margin-top:-350px;
+		margin-left:610px;
+	}
+
+	.next-btn2{
+		margin-top:-440px;
+		margin-left:990px;
+		position: absolute;
+	}
+
+	.logoipsum-container{
+		width: 50%;
+	}
+
+	.horizontal-line{
+		margin-top:180px;
+	}
+
+	.tools-container{
+		display:table;
+		width:80%;
+		margin-bottom:-120px;
+	}
+
+	.tools-container .row1{
+		float:left;
+		width:48%;
+	}
+
+	.tools-container .row2{
+		float:right;
+		width:48%;
+	}
+
+	.set-padding{
+		all:unset;
+	}
+
+	.external-wrapper1{
+		width:90%;
+		display: table;
+	}
+
+	.wrapper-container3{
+		float:left;
+		width: 50%;
+	}
+
+	.wrapper-container3 .block{
+		width: 50%;
+	}
+
+	.wrapper-container3 .sub-wrapper1{
+		width:50%;
+	}
+
+	.wrapper-container4{
+		float:left;
+		width: 50%;
+	}
+
+	.wrapper-container4 .block{
+		float:left;
+		width: 50%;
+	}
+
+	.wrapper-container4 .sub-wrapper2{
+		float:left;
+		width:50%;
+	}
+
+	.external-wrapper2{
+		width:90%;
+		display: table;
+	}
+
+	.wrapper-container5{
+		float:left;
+		width: 50%;
+	}
+
+	.wrapper-container5 .block{
+		float:left;
+		width: 50%;
+	}
+
+	.wrapper-container5 .sub-wrapper3{
+		float:right;
+		width:50%;
+	}
+
+	.wrapper-container6{
+		float:left;
+		width: 50%;
+	}
+
+	.wrapper-container6 .block{
+		width: 50%;
+	}
+
+	.wrapper-container6 .sub-wrapper4{
+		width:50%;
+	}
+
+
+	.buy-food-container .benefit-container{
+		text-align: left;
+	}
+
+	.buy-food-container{
+		display: table;
+		width: 90%;
+	}
+
+	.pr-1{
+		float:left;
+		width:25%;
+	}
+
+	.pr-2{
+		float: left;
+		width:25%;
+	}
+
+	.pr-3{
+		float:right;
+		width:25%;
+	}
+
+	.pr-4{
+		float: right;
+		width:25%;
+	}
+
+
+	.footer{
+		display: table;
+		width: 80%;
+		text-align: left;
+		margin-top:140px;
+	}
+
+	.footer-top{
+		float:left;
+		width: 30%;
+	}
+
+	.footer-menu-container{
+		float:left;
+		width:40%;
+	}
+
+	.get-in-touch{
+		float:right;
+		width: 30%;
+	}
+
+	.footer-top .title{
+		margin-top:-70px;
+	}
+
+	.footer-top .desc{
+		margin-left: 0px;
+	}
+
+	.contactwith{
+		display: inline-block;
+		width: 100%;
+	}
+
+	.email{
+		float:left;
+		width:58%;
+	}
+
+	.subscribe{
+		float:right;
+		width:38%;
+		margin-top:-41px;
+	}
+
+
+	.last-content{
+		text-align: center;
+		margin-left: 190px;
+	}
 }
