@@ -831,6 +831,11 @@ svg{
 /*2. Desktop View*/
 @media(min-width: 1200px){
 
+	.content{
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
 	.subheader{
 		display: inline-block;
 	}
@@ -872,8 +877,7 @@ svg{
 		width:42%;
 		margin:0;
 		float: left;
-/*		position: static;
-*/	}
+	}
 
 	.visual-content{
 		width: 58%
