@@ -3,11 +3,11 @@ body{
 	font-family: Inter;
 }
 
-
 /*1. Mobile View*/
 .header{
 	background-color: #f3fcf7;
 }
+
 
 .logo{
 	position: absolute;
@@ -112,6 +112,10 @@ nav .fa{
 	position: relative;
 }
 
+.visual-content .image img:hover{
+	box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
 .next-btn{
 	background: #ffffff;
 	width: 250px;
@@ -202,7 +206,9 @@ nav .fa{
 }
 
 .tool:hover{
-	background: #FFFAF0;
+	background: #DC143C;
+	color:#ffffff;
+	transition: 0.5s;
 }
 
 .tool-title{
@@ -347,17 +353,79 @@ nav .fa{
 	margin-top:129.75px;
 }
 
+
 .buy-product{
 	border:1.5px solid green;
 	text-align: center;
 	width:80%;
 	margin-bottom: 37px;
+	position: relative;
+	transition: 0.5s;
 }
 
+
 .buy-product:hover{
-	background-color: #f3f888;
-	border:1.5px solid blue;
+	background:#f3f888;
 }
+
+.buy-product .btn{
+	width: 60%;
+	font-size: 16px;
+	font-weight: 400;
+	border:2.5px solid #06C167;
+	padding: 18px 0 20px 0;
+	margin-bottom: 29px;
+	cursor: pointer;
+	opacity: 0;
+}
+
+.buy-product:hover .btn{
+	visibility: hidden;
+}
+
+.buy-product .btn a{
+	text-decoration: none;
+	color: #06C167;
+}
+
+.buy-product .hidden-btn{
+	width: 60%;
+	font-size: 16px;
+	font-weight: 400;
+	border:2.5px solid #06C167;
+	padding: 18px 0 20px 0;
+	margin-bottom: 29px;
+	cursor: pointer;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	position: absolute;
+	opacity: 1;
+	transition: 0.5s;
+}
+
+.buy-product:hover .hidden-btn{
+	bottom: 49%;
+	opacity:1;
+	background-color: #FAF0E6;
+}
+
+
+.buy-product .hidden-btn a{
+	text-decoration: none;
+	color: #06C167;
+}
+
+
+.buy-product .btn .arrow{
+	margin-left: 31.19px;
+}
+
+
+.buy-product .hidden-btn .arrow{
+	margin-left: 31.19px;
+}
+
 
 .buy-product .image{
 	padding-top:25px;
@@ -387,29 +455,7 @@ nav .fa{
 	display: inline-block;
 }
 
-.buy-product .btn{
-	width: 60%;
-	font-size: 16px;
-	font-weight: 400;
-	border:2.5px solid #06C167;
-	padding: 18px 0 20px 0;
-	margin-bottom: 29px;
-	cursor: pointer;
-}
 
-.buy-product .btn:hover{
-	background-color: #FAF0E6;
-}
-
-
-.buy-product .btn a{
-	text-decoration: none;
-	color: #06C167;
-}
-
-.buy-product .btn .arrow{
-	margin-left: 31.19px;
-}
 
 .bottom-body{
 	margin-top: 31px;
@@ -917,7 +963,7 @@ svg{
 	.tool{
 		display: table;
 		width: 50%;
-		margin-right: 0px;
+		height: 70px;
 	}
 
 	.image-part{
@@ -928,7 +974,7 @@ svg{
 	.desc-part{
 		float:right;
 		width:70%;
-		margin-top:-10px;
+		margin-top:-5px;
 	}
 
 	.set-padding{
