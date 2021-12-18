@@ -194,13 +194,15 @@ nav .fa{
 	width:80%;
 }
 
-.tools-container:hover{
-	background: #FFFAF0;
-}
 
 .tool{
 	text-align:center;
 	width:40%;
+	cursor:pointer;
+}
+
+.tool:hover{
+	background: #FFFAF0;
 }
 
 .tool-title{
@@ -253,6 +255,10 @@ nav .fa{
 	font-weight: 500;
 	line-height: 42px;
 	margin-bottom: 52px;
+}
+
+.desktop-slogan{
+	display: none;
 }
 
 .benefit-container{
@@ -624,37 +630,6 @@ svg{
 		text-align: center;
 	}
 
-	/*.benefit-container{
-		float:right;
-		width:45%;
-		margin-top: 85px;
-		text-align: left;
-	}
-
-	.list-container ul {
-	  display: table; 
-	  margin: 0;
-	  text-align: left;
-	}
-
-	.image-container .rectangle-2{
-		all:revert;
-	}
-
-	.image1 img{
-		width: 445px;
-		height:513px;
-		margin-left:48px;
-
-	}
-
-	.image-container .rectangle-2{
-		background-color: #F3FAFB;
-		width: 541px;
-		height: 608px;
-		margin-top:-517px;
-	}*/
-
 	.wrapper-container2{
 		display: table;
 		width:80%;
@@ -881,6 +856,7 @@ svg{
 	.next-btn{
 		float:right;
 		margin-top:-150px;
+		left:50px;
 		margin-right: -90px;
 		position: relative;
 		z-index: 2;
@@ -938,9 +914,132 @@ svg{
 		width:48%;
 	}
 
+	.tool{
+		display: table;
+		width: 50%;
+		margin-right: 0px;
+	}
+
+	.image-part{
+		float:left;
+		width:30%;
+	}
+
+	.desc-part{
+		float:right;
+		width:70%;
+		margin-top:-10px;
+	}
+
 	.set-padding{
 		all:unset;
 	}
+
+
+	.wrapper-container1 .benefit-container .benefit-title, .wrapper-container1 .benefit-container .benefit-slogan{
+		text-align: left;
+		margin-left: 0px;
+	}
+
+	.wrapper-container1{
+		width:100%;
+	}
+
+	.wrapper-container1 .benefit-container{
+		width:40%;
+		float:left;
+		margin-left:100px;
+	}
+
+	.wrapper-container1 .image-container{
+		width:40%;
+		float:left;
+	}
+
+
+	.image1{
+		background-color:#F3FAFB;
+		width: 541px;
+		height: 608px;
+	}
+
+	.image1 img{
+		width: 445px;
+		height:513px;
+	}
+
+
+	.image-container .rectangle-2{
+		display: none;
+	}
+
+
+	.benefit-container .benefit-slogan{
+		font-size: 60px;
+		line-height: 73px;
+		width:537px;
+	}
+
+	.list-container .benefit-list{
+		padding-bottom: 21px;
+	}
+
+	.list-container li{
+		float:left;
+		width:100%;
+	}
+
+	.horizontal-line{
+		width:1170px;
+	}
+
+
+	.wrapper-container2{
+		width:100%;
+	}
+
+	.wrapper-container2 .counter-container{
+		width:40%;
+	}
+
+	.wrapper-container2 .lemon-image{
+		width:541px;
+		height: 608px;
+		background: #F3FAFB;
+		margin-right: 80px;
+	}
+
+	.wrapper-container2 .lemon-image img{
+		width:445px;
+		height: 513px;
+		float:right;
+	}
+
+	.counter-container .benefit-container .benefit-title{
+		text-align: left;
+		margin-left:10px;
+	} 
+
+	.counter-container .button{
+		margin-left:15px;
+	}
+
+	.feature{
+		margin-top:60px;
+	}
+
+	.food{
+		display: none;
+	}
+
+	.desktop-slogan{
+		display: block;
+		font-size:60px;
+		font-weight: 500;
+		line-height: 73px;
+		margin-bottom: 70px;
+	}
+
 
 	.external-wrapper1{
 		width:90%;
@@ -1013,6 +1112,12 @@ svg{
 		text-align: left;
 	}
 
+	.buy-food-container .benefit-container .benefit-slogan{
+		margin:0;
+		width: 100%;
+		margin-bottom: 64px;
+	}
+
 	.buy-food-container{
 		display: table;
 		width: 90%;
@@ -1020,22 +1125,26 @@ svg{
 
 	.pr-1{
 		float:left;
-		width:25%;
+		width:22%;
+		margin-right: 31px;
 	}
 
 	.pr-2{
 		float: left;
-		width:25%;
+		width:22%;
+		margin-right: 31px;
 	}
 
 	.pr-3{
-		float:right;
-		width:25%;
+		float:left;
+		width:22%;
+		margin-right: 31px;
 	}
 
 	.pr-4{
-		float: right;
-		width:25%;
+		float: left;
+		width:22%;
+		margin-right: 31px;
 	}
 
 
