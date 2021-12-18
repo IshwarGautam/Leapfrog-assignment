@@ -826,7 +826,7 @@ svg{
 
 	.heading{
 		font-weight: 600;
-		font-size: 40px;
+		font-size: 35px;
 		padding: 191px 0 11px 135px;
 	}
 
@@ -840,19 +840,25 @@ svg{
 	.visual-content .image img{
 		width: 468px;
 		height: 634px; 
-		position: relative;
+		/*position: relative;*/
+		float:right;
+		margin-right: 140px;
+
+
 	}
 
 	.starter{
+		width:42%;
+		margin:0;
 		float: left;
-		width:48%;
-	}
+/*		position: static;
+*/	}
 
 	.visual-content{
-		width: 52%
+		width: 58%
 		float: right;
-		margin-right: 50px;
-		position: static;
+		position: relative;
+		z-index: 1;
 	}
 
 	.button{
@@ -860,7 +866,6 @@ svg{
 		padding-right: -50px;
 		padding-left: -50px;
 		width: 40%;
-		cursor: pointer;
 	}
 
 	nav{
@@ -874,21 +879,43 @@ svg{
 	}
 
 	.next-btn{
-		/*margin-top:-350px;
-		margin-right:400px;
-*/		position: absolute;
-		margin-top:-350px;
-		margin-left:610px;
+		float:right;
+		margin-top:-150px;
+		margin-right: -90px;
+		position: relative;
+		z-index: 2;
 	}
 
 	.next-btn2{
-		margin-top:-440px;
-		margin-left:990px;
-		position: absolute;
+		float:right;
+		margin-top:-230px;
+		left:460px;
+		margin-right : -90px;
+		z-index: 2;
+		position: relative;
 	}
 
 	.logoipsum-container{
-		width: 50%;
+		width: 45%;
+		display: table;
+		text-align: center;
+		position: relative;
+		padding-top:63.77px;
+	}
+
+	.div1{
+		float:left;
+		width:25%;
+	}
+
+	.div2{
+		float:left;
+		width:50%;
+	}
+
+	.div3{
+		float:right;
+		width: 25%;
 	}
 
 	.horizontal-line{
