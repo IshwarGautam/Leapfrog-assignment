@@ -1,4 +1,11 @@
-/*CSS for heading section*/
+/*Responsive Website*/
+
+/*
+1. Mobile View
+2. Tablet View (min-width:900px)
+3. Desktop View (min-width:1200px)
+*/
+
 body{
 	font-family: Inter;
 }
@@ -832,7 +839,7 @@ svg{
 @media(min-width: 1200px){
 
 	.content{
-		max-width: 1200px;
+		max-width: 1320px;
 		margin: 0 auto;
 	}
 
