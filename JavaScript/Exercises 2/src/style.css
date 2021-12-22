@@ -1,0 +1,15 @@
+.block, .animate{
+    width: 30%;
+    height: 400px;
+    border: 2px solid black;
+}
+
+.block{
+    float:left;
+    margin-left:100px;
+}
+
+.animate{
+    float:right;
+    margin-right:100px;
+}
