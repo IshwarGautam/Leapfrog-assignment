@@ -14,23 +14,30 @@ var input = {
     }
 };
 
-//Not a good solution
-id2 = input[1]['children'][0];
-id4 = input[1]['children'][1]['children'];
-id3 = input[1]['children'][1];
-id3['children'] = [id3['children'][0]['id']];
-id6 = input[5]['children'][0];
-id5 = input[5];
-id5['children'] = [id5['children'][0]['id']];
-id1 = input[1];
-id1['children'] = [id1['children'][0]['id'],id1['children'][1]['id']];
+NewArr = []
 
-var output={}
-output[1] = id1;
-output[2] = id2;
-output[3] = id3;
-output[4] = id4;
-output[5] = id5;
-output[6] = id6;
+//Incomplete 
+function Normalization(obj){
+  for(let key in obj){
+    if (typeof obj[key] == 'object'){
+      Normalization(obj[key]);
+    }
+    else{
+      NewArr.push(obj);
+    }
+  }
+  return NewArr;
+}
 
-console.log(output);
+// for (let key in input){
+//   if (typeof input[key]=='object'){
+//     console.log("Object");
+//   }
+//   else{
+//     console.log("No");
+//   }
+// }
+
+
+
+console.log(Normalization(input));
