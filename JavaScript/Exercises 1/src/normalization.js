@@ -16,7 +16,6 @@ var input = {
 
 NewArr = []
 
-//Incomplete 
 function Normalization(obj){
   for(let key in obj){
     if (typeof obj[key] == 'object'){
@@ -29,5 +28,14 @@ function Normalization(obj){
   return NewArr;
 }
 
-output = Normalization(input);
-console.log(Object.values(output.reduce((acc,cur)=>Object.assign(acc,{[cur.id]:cur}),{})))
+arr = Normalization(input);
+
+//remove duplicate element
+arr = Object.values(arr.reduce((acc,cur)=>Object.assign(acc,{[cur.id]:cur}),{}));
+
+Output = {}
+for (let i=1; i<=6; i++){
+  Output[i]=arr[i-1];
+}
+
+console.log(Output);
