@@ -14,14 +14,21 @@ var input = {
     }
 };
 
-NewArr = []
-
+NewArr = [];
+NewID = [];
 function Normalization(obj){
   for(let key in obj){
     if (typeof obj[key] == 'object'){
+      if (obj[key]['children']){
+        temp_id = []
+        for(let i=0; i<obj[key]['children'].length;i++){
+          temp_id.push(obj[key]['children'][i]['id']);
+        }
+        NewID.push(temp_id);
+      }
       Normalization(obj[key]);
     }
-    else{
+    else if (key == 'id'){
       NewArr.push(obj);
     }
   }
@@ -30,12 +37,18 @@ function Normalization(obj){
 
 arr = Normalization(input);
 
-//remove duplicate element
-arr = Object.values(arr.reduce((acc,cur)=>Object.assign(acc,{[cur.id]:cur}),{}));
-
 Output = {}
-for (let i=1; i<=6; i++){
+for (let i=1; i<=arr.length; i++){
   Output[i]=arr[i-1];
 }
 
+index = 0;
+for (let key in Output) {
+  if (Output[key]['children']){
+    Output[key]['children'] = NewID[index];
+    index++;
+  }
+}
+
 console.log(Output);
+
