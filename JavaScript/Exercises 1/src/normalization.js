@@ -29,15 +29,5 @@ function Normalization(obj){
   return NewArr;
 }
 
-// for (let key in input){
-//   if (typeof input[key]=='object'){
-//     console.log("Object");
-//   }
-//   else{
-//     console.log("No");
-//   }
-// }
-
-
-
-console.log(Normalization(input));
+output = Normalization(input);
+console.log(Object.values(output.reduce((acc,cur)=>Object.assign(acc,{[cur.id]:cur}),{})))
