@@ -2,6 +2,7 @@
     width: 50%;
     height: 50%;
     border: 2px solid black;
-    margin:auto;
+    float:left;
 }
+
 
