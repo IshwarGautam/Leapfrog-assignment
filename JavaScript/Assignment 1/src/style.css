@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#carousel-image-wrapper {
+  height: 540px;
+  position: relative;
+  background-repeat: repeat-x;
+}
+
+#carousel-container {
+  margin: 20px;
+  width: 960px;
+  position:relative;
+  overflow: hidden;
+}
+
+img {
+  position: absolute;
+  border: 1px solid #ccc;
+  top: 0px;
+}
