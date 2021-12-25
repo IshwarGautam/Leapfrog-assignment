@@ -4,21 +4,18 @@
   box-sizing: border-box;
 }
 
-#carousel-image-wrapper {
-  height: 540px;
-  position: relative;
-  background-repeat: repeat-x;
+body{
+  background: #212329;
 }
 
-#carousel-container {
-  margin: 20px;
-  width: 960px;
-  position:relative;
-  overflow: hidden;
+h1{
+  color: #fff;
+  font-size: 50px;
+  transform: translate(20%, 10%);
+  text-decoration: underline;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
+ 
 img {
   position: absolute;
-  border: 1px solid #ccc;
-  top: 0px;
-}
+} 

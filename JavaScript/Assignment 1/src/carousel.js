@@ -1,26 +1,3 @@
-const wrapper = document.getElementById('carousel-container');
-const images = document.getElementById('carousel-image-wrapper');
-
-const prevBtn = document.getElementById('previousBtn');
-prevBtn.style.fontSize = '60px';
-prevBtn.style.fontFamily = 'FontAwesome';
-prevBtn.style.color = '#fc2';
-prevBtn.style.position = "absolute";
-prevBtn.style.bottom = "215px";
-prevBtn.style.left = "10px";
-prevBtn.style.zIndex = "2";
-prevBtn.style.cursor = "pointer";
-
-const nextBtn = document.getElementById('nextBtn');
-nextBtn.style.fontSize = '60px';
-nextBtn.style.fontFamily = 'FontAwesome';
-nextBtn.style.color = '#fc2';
-nextBtn.style.position = "absolute";
-nextBtn.style.top = "270px";
-nextBtn.style.right = "10px";
-nextBtn.style.zIndex = "2";
-nextBtn.style.cursor = "pointer";
-
 function slider(properties){
   const imageWidth = properties.imageWidth;
   const imageCount = images.children.length;
@@ -50,14 +27,24 @@ function slider(properties){
       dx = i * imageWidth;
       counter = i+1;
       images.style.left = `-${dx}px`;
+
+      for (let c=0; c<imageCount; c++){
+        btn[c].style.background = "gray";
+      }
+      btn[i].style.background = "green";
+      turn = i+1;
+      btn[i].onmouseout = function(){
+        btn[i].style.background = "green";
+      }
     }
 
     btn[i].onmouseover = function(){
+      let getColor = btn[i].style.background;
       btn[i].style.background = "#f5e";
-    }
 
-    btn[i].onmouseout = function(){
-      btn[i].style.background = "gray";
+      btn[i].onmouseout = function(){
+        btn[i].style.background = getColor;
+      }
     }
           
     wrapper.appendChild(btn[i]);
@@ -71,10 +58,16 @@ function slider(properties){
   let turn=1;
   nextBtn.onclick = function () {
     if (counter == turn){
-      btn[turn-1].style.background = "gray";
-      btn[turn].style.background = "green";
-      turn++;
-      console.log(turn);
+      if (turn == imageCount){
+        btn[turn-1].style.background = "gray";
+        btn[turn-2].style.background = "green";
+        turn--;
+      }  
+      else {
+        btn[turn-1].style.background = "gray";
+        btn[turn].style.background = "green";
+        turn++;
+      }
     }
     if (dx % imageWidth == 0){
       interval = setInterval(() => {
@@ -102,10 +95,16 @@ function slider(properties){
   
   prevBtn.onclick = function () {
     if (counter == turn){
-      btn[turn-1].style.background = "gray";
-      btn[turn-2].style.background = "green";
-      turn--;
-      console.log(turn);
+      if(turn == 1) {
+        btn[turn-1].style.background = "gray";
+        btn[turn].style.background = "green";
+        turn++;
+      } 
+      else{
+        btn[turn-1].style.background = "gray";
+        btn[turn-2].style.background = "green";
+        turn--;
+      } 
     }
     if (dx % imageWidth == 0){
       interval = setInterval(() => {
