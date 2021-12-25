@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #212329;
+}
+
+h1{
+  color: #fff;
+  font-size: 50px;
+  transform: translate(10%, 10%);
+  text-decoration: underline;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+ 
+img {
+  position: absolute;
+} 
