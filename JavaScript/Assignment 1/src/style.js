@@ -1,3 +1,6 @@
+//===========================
+//Styling element through JS
+//===========================
 const wrapper = document.getElementById('carousel-container');
 wrapper.style.width = "960px";
 wrapper.style.position = "relative";

@@ -1,16 +1,21 @@
-function slider(properties){
-  const imageWidth = properties.imageWidth;
-  const imageCount = images.children.length;
+//==================================================
+// Main function starts
+//==================================================
+function slider(imageWidth=960){
 
+  const imageCount = images.children.length;
+  
   for (let i = 0; i < imageCount; i++){
     const image = images.children[i];
     image.style.left = `${i * imageWidth}px`;
   }
 
-  
   const btn = [];
-  const total_area = 1750; // so that for any number of images, the indicator will be in bottom-center
+  const total_area = 1750; // so that for any number of images, the indicator dot will be in bottom-center
 
+  //==========================================
+  // Creating Indicator dots
+  //==========================================
   for (let i=0; i<imageCount; i++){
     btn[i] = document.createElement('button');
     btn[i].style.width = "20px";
@@ -31,8 +36,10 @@ function slider(properties){
       for (let c=0; c<imageCount; c++){
         btn[c].style.background = "gray";
       }
+
       btn[i].style.background = "green";
       turn = i+1;
+
       btn[i].onmouseout = function(){
         btn[i].style.background = "green";
       }
@@ -53,15 +60,19 @@ function slider(properties){
   let interval;
   let dx = 0;
   let counter = 1;
-  btn[0].style.background = "green";
+  btn[0].style.background = "green"; //initial active indicator dot
 
   let turn=1;
+
+  //===================================
+  //Implementation of next slider image
+  //===================================
   nextBtn.onclick = function () {
-    if (counter == turn){
+    if (counter == turn){ //counter detects the turn of indicator dot to be active
       if (turn == imageCount){
-        btn[turn-1].style.background = "gray";
-        btn[turn-2].style.background = "green";
-        turn--;
+        btn[imageCount-1].style.background = "gray";
+        btn[0].style.background = "green";
+        turn=1;
       }  
       else {
         btn[turn-1].style.background = "gray";
@@ -69,17 +80,19 @@ function slider(properties){
         turn++;
       }
     }
+
+    //button is not clickable during transition
     if (dx % imageWidth == 0){
       interval = setInterval(() => {
-        if (counter!=5){
+        if (counter != imageCount){
           dx+=8;
           images.style.left = `-${dx}px`;
         }
   
-        if (counter==5){
-          dx-=8;
-          if (dx == (imageCount - 2) * imageWidth){
-            counter = 4;
+        if (counter == imageCount){ // redirect to the beginning of the slider
+          dx-=80;
+          if (dx == 0){
+            counter = 1;
             clearInterval(interval);
           }
           images.style.left = `-${dx}px`;
@@ -90,15 +103,17 @@ function slider(properties){
         }
       }, 1);
     }
-    
   };
   
+  //=======================================
+  //Implementation of previous slider image
+  //=======================================
   prevBtn.onclick = function () {
     if (counter == turn){
       if(turn == 1) {
-        btn[turn-1].style.background = "gray";
-        btn[turn].style.background = "green";
-        turn++;
+        btn[0].style.background = "gray";
+        btn[imageCount-1].style.background = "green";
+        turn = imageCount;
       } 
       else{
         btn[turn-1].style.background = "gray";
@@ -106,6 +121,7 @@ function slider(properties){
         turn--;
       } 
     }
+
     if (dx % imageWidth == 0){
       interval = setInterval(() => {
         if (counter != 1){
@@ -113,10 +129,10 @@ function slider(properties){
           images.style.left = `-${dx}px`;
         }
         
-        if (counter==1){
-          dx+=8
-          if (dx == imageWidth){
-            counter = 2;
+        if (counter==1){ //redirect to the end of the slider
+          dx+=80
+          if (dx >= (imageCount-1) * imageWidth){
+            counter = 5;
             clearInterval(interval);
           }
           images.style.left = `-${dx}px`;
@@ -127,11 +143,8 @@ function slider(properties){
         }        
       }, 1);
     }  
-  };
-    
+  };    
 }
 
-slider({
-  imageWidth : 960
-});
+slider();
 
