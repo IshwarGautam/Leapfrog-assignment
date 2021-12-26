@@ -63,9 +63,16 @@ function slider(imageWidth=960){
   let interval;
   let dx = 0;
   let counter = 1;
-  btn[0].style.background = "green"; //initial active indicator dot
-
   let turn=1;
+
+  //initial active indicator dot
+  btn[0].style.background = "green"; 
+
+  //to make transition smoothly per image
+  const Speed = imageWidth / 120; 
+
+  //use either to reach at the beginning or at the end suddenly
+  const fastSpeed = imageWidth / 12; 
 
   //===================================
   //Implementation of next slider image
@@ -88,12 +95,13 @@ function slider(imageWidth=960){
     if (dx % imageWidth == 0){
       interval = setInterval(() => {
         if (counter != imageCount){
-          dx+=8;
+          dx+=Speed;
           images.style.left = `-${dx}px`;
         }
   
-        if (counter == imageCount){ // redirect to the beginning of the slider
-          dx-=80;
+        // redirect to the beginning of the slider
+        if (counter == imageCount){ 
+          dx-=fastSpeed;
           if (dx == 0){
             counter = 1;
             clearInterval(interval);
@@ -128,14 +136,15 @@ function slider(imageWidth=960){
     if (dx % imageWidth == 0){
       interval = setInterval(() => {
         if (counter != 1){
-          dx-=8;
+          dx-=Speed;
           images.style.left = `-${dx}px`;
         }
         
-        if (counter==1){ //redirect to the end of the slider
-          dx+=80
+        //redirect to the end of the slider
+        if (counter==1){ 
+          dx+=fastSpeed
           if (dx >= (imageCount-1) * imageWidth){
-            counter = 5;
+            counter = imageCount;
             clearInterval(interval);
           }
           images.style.left = `-${dx}px`;
@@ -149,5 +158,8 @@ function slider(imageWidth=960){
   };    
 }
 
+//==============================
+// Finally, Calling the function
+//==============================
 slider();
 
