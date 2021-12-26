@@ -21,15 +21,15 @@ function slider(imageWidth=960){
   //==========================================
   for (let i=0; i<imageCount; i++){
     btn[i] = document.createElement('button');
-    btn[i].style.width = "20px";
-    btn[i].style.height = "20px";
-    btn[i].style.borderRadius = "50%";
-    btn[i].style.background = "gray";
-    btn[i].style.position = "relative";
-    btn[i].style.zIndex = "2";
-    btn[i].style.left = ((total_area / imageCount) + (i * 20)) + "px";
-    btn[i].style.bottom = "22px";
-    btn[i].style.cursor = "pointer";
+    btn[i].style.width = '20px';
+    btn[i].style.height = '20px';
+    btn[i].style.borderRadius = '50%';
+    btn[i].style.background = 'gray';
+    btn[i].style.position = 'relative';
+    btn[i].style.zIndex = '2';
+    btn[i].style.left = ((total_area / imageCount) + (i * 20)) + 'px';
+    btn[i].style.bottom = '22px';
+    btn[i].style.cursor = 'pointer';
 
     btn[i].onclick = function(){
       dx = i * imageWidth;
@@ -37,20 +37,20 @@ function slider(imageWidth=960){
       images.style.left = `-${dx}px`;
 
       for (let c=0; c<imageCount; c++){
-        btn[c].style.background = "gray";
+        btn[c].style.background = 'gray';
       }
 
-      btn[i].style.background = "green";
+      btn[i].style.background = 'green';
       turn = i+1;
 
       btn[i].onmouseout = function(){
-        btn[i].style.background = "green";
+        btn[i].style.background = 'green';
       }
     }
 
     btn[i].onmouseover = function(){
       let getColor = btn[i].style.background;
-      btn[i].style.background = "#f5e";
+      btn[i].style.background = '#f5e';
 
       btn[i].onmouseout = function(){
         btn[i].style.background = getColor;
@@ -66,7 +66,7 @@ function slider(imageWidth=960){
   let turn=1;
 
   //initial active indicator dot
-  btn[0].style.background = "green"; 
+  btn[0].style.background = 'green'; 
 
   //to make transition smoothly per image
   const Speed = imageWidth / 120; 
@@ -80,13 +80,13 @@ function slider(imageWidth=960){
   nextBtn.onclick = function () {
     if (counter == turn){ //counter detects the turn of indicator dot to be active
       if (turn == imageCount){
-        btn[imageCount-1].style.background = "gray";
-        btn[0].style.background = "green";
+        btn[imageCount-1].style.background = 'gray';
+        btn[0].style.background = 'green';
         turn=1;
       }  
       else {
-        btn[turn-1].style.background = "gray";
-        btn[turn].style.background = "green";
+        btn[turn-1].style.background = 'gray';
+        btn[turn].style.background = 'green';
         turn++;
       }
     }
@@ -122,13 +122,13 @@ function slider(imageWidth=960){
   prevBtn.onclick = function () {
     if (counter == turn){
       if(turn == 1) {
-        btn[0].style.background = "gray";
-        btn[imageCount-1].style.background = "green";
+        btn[0].style.background = 'gray';
+        btn[imageCount-1].style.background = 'green';
         turn = imageCount;
       } 
       else{
-        btn[turn-1].style.background = "gray";
-        btn[turn-2].style.background = "green";
+        btn[turn-1].style.background = 'gray';
+        btn[turn-2].style.background = 'green';
         turn--;
       } 
     }
