@@ -38,22 +38,25 @@ function Carousel(properties){
     this.btn[i].style.left =  (imageWidth/2) + (i * 20) - (this.imageCount * 20) + 'px';
     this.btn[i].style.bottom = '22px';
     this.btn[i].style.cursor = 'pointer';
-
+    
     this.btn[i].onclick = function(){
-      this.dx = i * imageWidth;
-      this.counter = i+1;
-      images[this.wrapperId].style.left = `-${this.dx}px`;
+      if (this.dx % imageWidth == 0){
+        this.dx = i * imageWidth;
+        this.counter = i+1;
+        images[this.wrapperId].style.left = `-${this.dx}px`;
 
-      for (let c=0; c<this.imageCount; c++){
-        this.btn[c].style.background = 'gray';
-      }
+        for (let c=0; c<this.imageCount; c++){
+          this.btn[c].style.background = 'gray';
+        }
 
-      this.btn[i].style.background = 'green';
-      this.turn = i+1;
-
-      this.btn[i].onmouseout = function(){
         this.btn[i].style.background = 'green';
-      }.bind(this);
+        this.turn = i+1;
+
+        this.btn[i].onmouseout = function(){
+          this.btn[i].style.background = 'green';
+        }.bind(this);
+      }
+      
     }.bind(this);
 
     this.btn[i].onmouseover = function(){
@@ -72,10 +75,10 @@ function Carousel(properties){
   this.btn[0].style.background = 'green'; 
 
   //to make transition smoothly per image
-  const Speed = imageWidth / 120; 
+  this.Speed = imageWidth / 120; 
 
   //use either to reach at the beginning or at the end suddenly
-  const fastSpeed = imageWidth / 12; 
+  this.fastSpeed = imageWidth / 12; 
 
   this.turn=1;
 
@@ -87,7 +90,7 @@ function Carousel(properties){
     if (this.counter == this.turn){ 
       if (this.turn == this.imageCount){
         this.toggle = 0;
-        this.btn[imageCount-1].style.background = 'gray';
+        this.btn[this.imageCount-1].style.background = 'gray';
         this.btn[0].style.background = 'green';
         this.turn=1;
       }  
@@ -101,13 +104,13 @@ function Carousel(properties){
     if (this.dx % imageWidth == 0){
       this.interval = setInterval(() => {
         if (this.counter != this.imageCount){
-          this.dx+=Speed;
+          this.dx+=this.Speed;
           images[this.wrapperId].style.left = `-${this.dx}px`;
         }
         
         // redirect to the beginning of the slider
         if (this.counter == this.imageCount){ 
-          this.dx-=fastSpeed;
+          this.dx-=this.fastSpeed;
           if (this.dx == 0){
             this.counter = 1;
             clearInterval(this.interval);
@@ -143,13 +146,13 @@ function Carousel(properties){
     if (this.dx % imageWidth == 0){
       this.interval = setInterval(() => {
         if (this.counter != 1){
-          this.dx-=Speed;
+          this.dx-=this.Speed;
           images[this.wrapperId].style.left = `-${this.dx}px`;
         }
         
         //redirect to the end of the slider
         if (this.counter==1){ 
-          this.dx += fastSpeed 
+          this.dx += this.fastSpeed 
           if (this.dx >= (this.imageCount-1) * imageWidth){
             this.counter = this.imageCount;
             clearInterval(this.interval);
@@ -201,14 +204,14 @@ function Carousel(properties){
 new Carousel({
   imageContainer:wrapper[0],
   wrapperId:0,
-  transitionTime: 600,
+  transitionTime: 400,
   holdTime: 4000
 });
 
 new Carousel({
   imageContainer:wrapper[1],
   wrapperId:1,
-  transitionTime: 800,
+  transitionTime: 500,
   holdTime: 6000
 });
 
