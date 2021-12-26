@@ -14,7 +14,6 @@ function slider(imageWidth=960){
   }
 
   const btn = [];
-  const total_area = 1750; // so that for any number of images, the indicator dot will be in bottom-center
 
   //==========================================
   // Creating Indicator dots
@@ -27,7 +26,7 @@ function slider(imageWidth=960){
     btn[i].style.background = 'gray';
     btn[i].style.position = 'relative';
     btn[i].style.zIndex = '2';
-    btn[i].style.left = ((total_area / imageCount) + (i * 20)) + 'px';
+    btn[i].style.left = (imageWidth/2) + (i * 20) - (imageCount * 20) + "px";
     btn[i].style.bottom = '22px';
     btn[i].style.cursor = 'pointer';
 
