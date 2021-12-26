@@ -44,7 +44,6 @@ function Carousel(properties){
       this.counter = i+1;
       images[this.wrapperId].style.left = `-${this.dx}px`;
 
-
       for (let c=0; c<this.imageCount; c++){
         this.btn[c].style.background = 'gray';
       }
@@ -72,6 +71,12 @@ function Carousel(properties){
   //initial active indicator dot
   this.btn[0].style.background = 'green'; 
 
+  //to make transition smoothly per image
+  const Speed = imageWidth / 120; 
+
+  //use either to reach at the beginning or at the end suddenly
+  const fastSpeed = imageWidth / 12; 
+
   this.turn=1;
 
   //===================================
@@ -96,13 +101,13 @@ function Carousel(properties){
     if (this.dx % imageWidth == 0){
       this.interval = setInterval(() => {
         if (this.counter != this.imageCount){
-          this.dx+=8;
+          this.dx+=Speed;
           images[this.wrapperId].style.left = `-${this.dx}px`;
         }
         
         // redirect to the beginning of the slider
         if (this.counter == this.imageCount){ 
-          this.dx-=80;
+          this.dx-=fastSpeed;
           if (this.dx == 0){
             this.counter = 1;
             clearInterval(this.interval);
@@ -138,13 +143,13 @@ function Carousel(properties){
     if (this.dx % imageWidth == 0){
       this.interval = setInterval(() => {
         if (this.counter != 1){
-          this.dx-=8;
+          this.dx-=Speed;
           images[this.wrapperId].style.left = `-${this.dx}px`;
         }
         
         //redirect to the end of the slider
         if (this.counter==1){ 
-          this.dx+=80
+          this.dx += fastSpeed 
           if (this.dx >= (this.imageCount-1) * imageWidth){
             this.counter = this.imageCount;
             clearInterval(this.interval);
@@ -179,6 +184,7 @@ function Carousel(properties){
     }
 
     //code clearfix
+    //sometime indicator dot activated at wrong time
     for (let b=0; b<this.imageCount; b++){
       this.btn[b].style.background = 'gray';
     }
@@ -195,15 +201,15 @@ function Carousel(properties){
 new Carousel({
   imageContainer:wrapper[0],
   wrapperId:0,
-  transitionTime: 500,
-  holdTime: 3000
+  transitionTime: 600,
+  holdTime: 4000
 });
 
 new Carousel({
   imageContainer:wrapper[1],
   wrapperId:1,
   transitionTime: 800,
-  holdTime: 5000
+  holdTime: 6000
 });
 
 
