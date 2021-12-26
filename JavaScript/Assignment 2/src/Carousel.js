@@ -19,7 +19,6 @@ function Carousel(properties){
     this.image.style.left = `${i * imageWidth}px`;
   }
 
-  // let interval;
   this.dx = 0;
   this.counter = 1;
 
@@ -66,7 +65,7 @@ function Carousel(properties){
         this.btn[i].style.background = this.getColor;
       }.bind(this);
     }.bind(this);
-          
+
     this.wrapper.appendChild(this.btn[i]);
   }
 
@@ -82,7 +81,7 @@ function Carousel(properties){
     if (this.counter == this.turn){ //counter detects the turn of indicator dot to be active
       if (this.turn == this.imageCount){
         this.toggle = 0;
-        // this.btn[imageCount-1].style.background = "gray";
+        this.btn[imageCount-1].style.background = "gray";
         this.btn[0].style.background = "green";
         this.turn=1;
       }  
@@ -157,10 +156,20 @@ function Carousel(properties){
       }, `${this.transitionTime/imageWidth*10}`);
     }  
   }.bind(this); 
-  
+
   //======================================================
   // Changing the slider automatically at a fixed interval
   //======================================================
+  // if (this.prevBtn.click() || this.nextBtn.click()){
+  //   setTimeout(() => {
+  //     ChangedAutomatically();
+  //   }, 3000);
+  // }
+  // else{
+  //   ChangedAutomatically();
+  // }
+
+  
   this.toggle=0;
   this.automate = setInterval(() => {
     if (this.toggle==0){
@@ -184,8 +193,8 @@ function Carousel(properties){
     
     setTimeout(this.automate, 3000);
   },3000);
-
 }
+
 
 new Carousel({
   imageContainer:wrapper[0],
