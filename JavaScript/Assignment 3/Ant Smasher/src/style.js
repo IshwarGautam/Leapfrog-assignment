@@ -9,4 +9,4 @@ canvas.style.position = "fixed";
 canvas.style.top = "50%";
 canvas.style.left = "50%";
 canvas.style.transform = "translate(-50%, -50%)";
-// canvas.style.background = "#212329";
+canvas.style.background = "#212329";

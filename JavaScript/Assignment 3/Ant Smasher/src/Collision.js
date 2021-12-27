@@ -4,7 +4,7 @@
 
 function CreateAnt() {
   this.ant = document.createElement("div");
-  this.ant.style.backgroundImage = `url('./animated-ant.gif')`;
+  this.ant.style.backgroundImage = `url('./image/ant.gif')`;
   
   this.Width = 68;
   this.Height = 93;
@@ -30,6 +30,16 @@ function CreateAnt() {
   this.draw = function () {
     canvas.appendChild(this.ant);
   };
+  
+  //==============================
+  // Remove an ant on mouse click
+  //==============================
+  this.delete = ()=> {
+    canvas.removeChild(this.ant);
+  };
+
+  this.ant.addEventListener("click", this.delete);
+  this.ant.style.cursor = "no-drop";
 
   this.move = function () {
     setInterval(() => {
@@ -41,6 +51,7 @@ function CreateAnt() {
       // Collision Detection
       this.checkWallCollision();
       this.checkAntCollision();
+
     }, 1000 / fps);
   };
 
@@ -70,8 +81,7 @@ function CreateAnt() {
     antArray.forEach((ant) => {
       
       for (let i = 0; i < antArray.length; i++) {
-        if (ant != antArray[i]) {
-            
+        if (ant != antArray[i]) {          
           let b1x = ant.x;
           let b1y = ant.y;
           let b2x = antArray[i].x;
@@ -125,4 +135,5 @@ for (let i = 0; i < antCount; i++) {
   antArray.push(ant);
   ant.draw();
   ant.move();
+  // ant.delete();
 }
