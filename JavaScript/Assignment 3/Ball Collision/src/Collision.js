@@ -1,4 +1,6 @@
-const canvas = document.getElementById("canvas");
+//=========================
+// Main function (class)
+//=========================
 
 function CreateBall() {
   this.ball = document.createElement("div");
@@ -9,7 +11,7 @@ function CreateBall() {
 
   this.ball.style.borderRadius = "50%";
   
-  this.radius = getRandomInt(15, 30);
+  this.radius = getRandomInt(10, 30);
   this.Width = 2 * this.radius;
   this.Height = 2 * this.radius;
 
@@ -22,18 +24,14 @@ function CreateBall() {
   this.dx = getDirection();
   this.dy = getDirection();
 
-  this.angle = function(){
-    return Math.atan2(this.dy, this.dx);
-  }
-
-  this.speed = getRandomInt(3,8);
+  this.speed = getRandomInt(1,8);
 
   this.ball.style.top = this.y + "px";
   this.ball.style.left = this.x + "px";
   this.ball.style.position = "absolute";
 
   this.draw = function () {
-    viewport.appendChild(this.ball);
+    canvas.appendChild(this.ball);
   };
 
   this.move = function () {
@@ -71,23 +69,45 @@ function CreateBall() {
     ballArray.forEach((ball) => {
       
       for (let i = 0; i < ballArray.length; i++) {
-        if (ball !== ballArray[i]) {
+        if (ball != ballArray[i]) {
             
-          var b1x = ball.x;
-          var b1y = ball.y;
-          var b2x = ballArray[i].x;
-          var b2y = ballArray[i].y;
-          var radius1 = ball.radius;
-          var radius2 = ballArray[i].radius;
-          var dx = b1x - b2x;
-          var dy = b1y - b2y;
-          var distance = Math.sqrt(dx * dx + dy * dy);
+          let b1x = ball.x;
+          let b1y = ball.y;
+          let b2x = ballArray[i].x;
+          let b2y = ballArray[i].y;
+          let radius1 = ball.radius;
+          let radius2 = ballArray[i].radius;
+          let dx = b1x - b2x;
+          let dy = b1y - b2y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance <= (radius1 + radius2)) {
+          if (distance <= radius1 + radius2) { //collision occur
 
-              // change the direction
-              ball.dx = -ball.dx;
-              ball.dy = -ball.dy;
+            // change the direction
+            collision_angle = Math.atan2(dy,dx);
+
+            magnitude_1 = Math.sqrt(ball.dx*ball.dx+ball.dy*ball.dy);
+            magnitude_2 = Math.sqrt(ballArray[i].dx*ballArray[i].dx+ballArray[i].dy*ballArray[i].dy);
+
+            direction_1 = Math.atan2(ball.dy, ball.dx);
+            direction_2 = Math.atan2(ballArray[i].dy, ballArray[i].dx);
+
+            new_dx1 = magnitude_1 * Math.cos(direction_1-collision_angle);
+            new_dy1 = magnitude_1 * Math.sin(direction_1-collision_angle);
+            new_dx2 = magnitude_2 * Math.cos(direction_2-collision_angle);
+            new_dy2 = magnitude_1 * Math.sin(direction_2-collision_angle);
+
+            ball.dx = new_dx1;
+            ball.dy = new_dy1;
+            ballArray[i].dx = new_dx2;
+            ballArray[i].dy = new_dy2;
+
+            //======================================================
+            //Sometimes, two balls get stuck together for long time,
+            //solveStuck function deals with this problem.
+            //The implementation of this function is in util.js
+            //======================================================
+            solveStuck(ball, ballArray[i]);
           }
         }
       } 
@@ -95,7 +115,10 @@ function CreateBall() {
   };
 }
 
-viewport.innerHTML = "";
+//============================================================
+// Insert the ball and its position in the canvas or viewport
+//============================================================
+canvas.innerHTML = "";
 for (let i = 0; i < ballCount; i++) {
   const ball = new CreateBall();
   ballArray.push(ball);
