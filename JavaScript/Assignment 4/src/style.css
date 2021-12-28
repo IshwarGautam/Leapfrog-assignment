@@ -42,8 +42,3 @@ body{
 .car.lane-right {
   left: 225px;
 }
-
-.middle{
-  border-right: 5px dashed ivory;
-  border-left: 5px dashed ivory
-}
