@@ -104,9 +104,7 @@ function CreateAnt() {
 
           if (distance <= radius1 + radius2) { //collision occur
 
-            // Transform their head and change the direction
-            this.ant.style.transform = 'rotate(5deg)';
-
+            //change the direction
             collision_angle = Math.atan2(dy,dx);
 
             magnitude_1 = Math.sqrt(ant.dx*ant.dx+ant.dy*ant.dy);
