@@ -77,13 +77,19 @@ class Obstacle {
   }
 
   collide(){ 
-    if (this.y>laneLength - carHeight && index === this.index){
-    
-      road.removeChild(this.element);
+    if (this.y>laneLength - carHeight -100 && index === this.index){
+      this.element.remove();
+      // road.removeChild(this.element);
       clearInterval(this.interval);  
-      road.style.opacity = '0.4';
-      road.style.transition = '0.5s';
-      replayButton.style.display = 'block';
+      // road.style.opacity = '0.2';
+      lane.style.backgroundImage = `url(./images/gameover.png)`;
+      road.style.transition = '0.3s';
+
+      setTimeout(() => {
+        replayButton.style.display = 'block';
+      }, 2000);
+      speed = 5;
+      car.style.visibility = 'hidden';
     }
     
   }
@@ -91,19 +97,25 @@ class Obstacle {
 
 playKey();
 let highScore = localStorage.getItem("highScore") || 0;
-let obsArray = [];
-// let frameId = window.requestAnimationFrame(playGame);
-function playGame(){
-  road.style.opacity = '100%';
-  let score = 0;
-  let speed = 5;
 
+let score = 0;
+let speed = 5;
+let obsArray = [];
+
+function playGame(){
+  obsArray = [];
+
+  lane.style.backgroundImage = `url(./images/road.png)`;
+  lane.style.transition = '0.4s';
+
+  car.style.visibility = 'visible';
   playButton.style.display = "none";
   replayButton.style.display = "none";
   // playKey();
 
   let interval = setInterval(() => {
     speed += 0.1;
+
     let obs = new Obstacle(speed, interval);
     obs.draw();
     obsArray.push(obs);
@@ -124,7 +136,7 @@ function playGame(){
     document.getElementById("score").innerHTML = score;
     document.getElementById("highScore").innerHTML = highScore; 
     
-  }, 1000);
+  }, 4000/speed);
 }
 
 playButton.addEventListener("click", playGame);

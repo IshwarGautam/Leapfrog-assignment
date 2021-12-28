@@ -14,7 +14,8 @@ body{
   flex: 1;
   height: 600px;
   /* border: 1px dashed ivory; */
-  background: rgb(125,125,125);
+  /* background: rgb(125,125,125); */
+  background-image: url("../images/road.png");
 }
 
 .left,
