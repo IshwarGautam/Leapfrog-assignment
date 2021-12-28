@@ -32,6 +32,7 @@ replayButton.style.top = '50%';
 replayButton.style.left = '50%';
 replayButton.style.transform = 'translate(-50%, -50%)';
 replayButton.style.display = 'none';
+replayButton.style.zIndex = '2';
 road.appendChild(replayButton);
 
 // const car = document.getElementById("car");

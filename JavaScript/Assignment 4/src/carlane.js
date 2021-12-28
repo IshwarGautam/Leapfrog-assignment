@@ -7,7 +7,7 @@ function getRandomInt(min, max) {
 
 let index = 1;
 const laneCount = 3;
-const laneLength = 500;
+const laneLength = 600;
 const carHeight = 100;
 
 const laneMap = {
@@ -34,11 +34,12 @@ function playKey(){
 
 
 class Obstacle {
-  constructor(speed) {
+  constructor(speed, interval) {
     this.index = getRandomInt(0, 3);
     this.y = getRandomInt(-150, -200);
     this.speed = speed;
     this.passed = 0;
+    this.interval = interval;
   }
 
   draw() {
@@ -77,28 +78,33 @@ class Obstacle {
 
   collide(){ 
     if (this.y>laneLength - carHeight && index === this.index){
-      // window.cancelAnimationFrame(this.frameId);
-
-      
+    
+      road.removeChild(this.element);
+      clearInterval(this.interval);  
+      road.style.opacity = '0.4';
+      road.style.transition = '0.5s';
       replayButton.style.display = 'block';
     }
+    
   }
 }
 
-const obsArray = [];
-let speed = 5;
-let score = 0;
+playKey();
 let highScore = localStorage.getItem("highScore") || 0;
-
+let obsArray = [];
 // let frameId = window.requestAnimationFrame(playGame);
 function playGame(){
+  road.style.opacity = '100%';
+  let score = 0;
+  let speed = 5;
+
   playButton.style.display = "none";
   replayButton.style.display = "none";
-  playKey();
+  // playKey();
 
-  setInterval(() => {
+  let interval = setInterval(() => {
     speed += 0.1;
-    let obs = new Obstacle(speed);
+    let obs = new Obstacle(speed, interval);
     obs.draw();
     obsArray.push(obs);
   
