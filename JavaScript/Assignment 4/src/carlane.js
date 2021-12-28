@@ -66,7 +66,7 @@ class Obstacle {
 
     //image = road
     // provide some motion to the road so that it looks like the car is moving
-    image.style.display = 'block';
+    
     image.style.top = this.y + "px";
     
     image.style.position = 'absolute';
@@ -100,8 +100,10 @@ class Obstacle {
       
       this.element.remove();
       clearInterval(this.interval);  
+      image.style.display = 'none';
+      road.style.backgroundImage = `url(./images/mobile.png)`;
       lane.style.backgroundImage = `url(./images/gameover.png)`;
-      road.style.transition = '0.3s';
+      lane.style.transition = '0.4s';
 
       setTimeout(() => {
         replayButton.style.display = 'block';
@@ -124,10 +126,7 @@ let obsArray = [];
 function playGame(){
   obsArray = [];
   
-  lane.style.backgroundImage = `url(./images/road3.png)`;
-  
-  // lane.style.transition = '0.4s';
-  
+  image.style.display = 'block';
   car.style.visibility = 'visible';
   playButton.style.display = "none";
   replayButton.style.display = "none";

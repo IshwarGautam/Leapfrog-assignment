@@ -38,12 +38,11 @@ replayButton.style.transform = 'translate(-50%, -50%)';
 replayButton.style.display = 'none';
 replayButton.style.zIndex = '2';
 
-const image = document.getElementById("Image");
+let image = document.getElementById("Image");
 image.style.top = '50%';
 image.style.left = '50%';
 image.style.transform = 'translate(-50%, -50%)';
 image.style.position = 'absolute';
-image.style.overflow = 'hidden';
 image.style.display = 'none';
 
 
