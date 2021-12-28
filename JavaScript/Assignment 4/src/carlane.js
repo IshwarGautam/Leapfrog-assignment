@@ -1,10 +1,4 @@
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min); 
-}
-
-
+// initialize required variable
 let index = 1;
 const laneCount = 3;
 const laneLength = 600;
@@ -16,6 +10,14 @@ const laneMap = {
   2: "lane-right"
 };
 
+//get random number between min and max provided
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); 
+}
+
+// Add event listener to move the car
 function playKey(){
   document.addEventListener("keydown", (event) => {
     if (event.code === "ArrowLeft") {
@@ -25,14 +27,14 @@ function playKey(){
       index++;
       if (index > laneCount - 1) index = laneCount - 1;
     }
-  
     const laneMapValue = laneMap[index];
   
     car.setAttribute("class", `car ${laneMapValue}`);
   });
 }
+playKey();
 
-
+// Create obstacleo class
 class Obstacle {
   constructor(speed, interval) {
     this.index = getRandomInt(0, 3);
@@ -42,6 +44,7 @@ class Obstacle {
     this.interval = interval;
   }
 
+  // draw an obstacle (other car)
   draw() {
     this.element = document.createElement("div");
 
@@ -54,8 +57,11 @@ class Obstacle {
 
     road.appendChild(this.element);
   }
-
+  
+  
   move() {
+    // lane.style.marginBottom = this.speed + "px";
+
     if (!this.passed){
       this.y += this.speed;
       this.element.style.top = this.y + "px";
@@ -63,39 +69,41 @@ class Obstacle {
 
     this.collide();
     
-    // console.log(this.y);
     if (this.y >= laneLength) {
       this.element.remove();
-      // this.y = -150;
       this.passed = true;
     }
 
-    if (this.y > laneLength-100){
+    // obstacle that passed away is given negative index 
+    if (this.y > laneLength - carHeight){
       this.index = -1;
     }
     
   }
 
+  // what if other car get collide with my car
+  // carheight is multiplied by 2 that may include bottom pixel and other
+  // so that if other car just touch mine one, it indicates the collision occur
   collide(){ 
-    if (this.y>laneLength - carHeight -100 && index === this.index){
+    if (this.y>laneLength - 2 * carHeight  && index === this.index){
+      
       this.element.remove();
-      // road.removeChild(this.element);
       clearInterval(this.interval);  
-      // road.style.opacity = '0.2';
       lane.style.backgroundImage = `url(./images/gameover.png)`;
       road.style.transition = '0.3s';
 
       setTimeout(() => {
         replayButton.style.display = 'block';
       }, 2000);
-      speed = 5;
+
+      speed = 5; //default value
       car.style.visibility = 'hidden';
     }
     
   }
 }
 
-playKey();
+// get highscore from our local storage
 let highScore = localStorage.getItem("highScore") || 0;
 
 let score = 0;
@@ -104,48 +112,51 @@ let obsArray = [];
 
 function playGame(){
   obsArray = [];
-
+  
   lane.style.backgroundImage = `url(./images/road.png)`;
   lane.style.transition = '0.4s';
-
+  
   car.style.visibility = 'visible';
   playButton.style.display = "none";
   replayButton.style.display = "none";
-  // playKey();
 
   let interval = setInterval(() => {
+
+    //increment the speed at each interval
     speed += 0.1;
 
     let obs = new Obstacle(speed, interval);
     obs.draw();
     obsArray.push(obs);
-  
+    
     //set score
+    // suppose if obstacle collide with my car, there are two cars that is still to be passed
+    // so to calculate score, I am just counting the length of the obstacle produced substract by 2
     if (obsArray.length>2){
       score = obsArray.length - 2;
     }
     else{
       score = 0;
     }
-  
+    
+    // update the highscore
     if (score>highScore) {
       highScore = score;
       localStorage.setItem("highScore", highScore);
     }
   
+    
     document.getElementById("score").innerHTML = score;
     document.getElementById("highScore").innerHTML = highScore; 
     
-  }, 4000/speed);
+  }, 4000/speed); //as speed increase, time to generate obstacle decrease, that means obstacle create as fast as speed goes high
 }
 
 playButton.addEventListener("click", playGame);
 replayButton.addEventListener("click", playGame);
   
-
 function move() {
   obsArray.forEach((obs) => obs.move());
     requestAnimationFrame(move);
 }
-
 move();

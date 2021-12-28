@@ -1,4 +1,5 @@
 const lane = document.getElementById("lane");
+car.style.visibility = "hidden";
 
 const road = document.getElementById("road");
 road.style.width = "300px";
@@ -8,6 +9,7 @@ road.style.position = "fixed";
 road.style.top = '50%';
 road.style.left = '50%';
 road.style.transform = 'translate(-50%, -50%)';
+road.style.backgroundImage = `url(./images/mobile.png)`;
 
 let playButton = document.getElementById('play');
 playButton.style.background = "green";
