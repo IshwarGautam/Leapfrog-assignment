@@ -4,6 +4,8 @@ const laneCount = 3;
 const laneLength = 600;
 const carHeight = 100;
 
+const BACKGROUND_IMAGE_POSITION = -600;
+
 const laneMap = {
   0: "lane-left",
   1: "lane-middle",
@@ -42,6 +44,7 @@ class Obstacle {
     this.speed = speed;
     this.passed = 0;
     this.interval = interval;
+    this.backgroundYPosition = BACKGROUND_IMAGE_POSITION;
   }
 
   // draw an obstacle (other car)
@@ -60,7 +63,15 @@ class Obstacle {
   
   
   move() {
-    // lane.style.marginBottom = this.speed + "px";
+
+    //image = road
+    // provide some motion to the road so that it looks like the car is moving
+    image.style.display = 'block';
+    image.style.top = this.y + "px";
+    
+    image.style.position = 'absolute';
+    image.style.transition = '0.01s';
+    image.style.overflow = 'hidden';
 
     if (!this.passed){
       this.y += this.speed;
@@ -113,18 +124,21 @@ let obsArray = [];
 function playGame(){
   obsArray = [];
   
-  lane.style.backgroundImage = `url(./images/road.png)`;
-  lane.style.transition = '0.4s';
+  lane.style.backgroundImage = `url(./images/road3.png)`;
+  
+  // lane.style.transition = '0.4s';
   
   car.style.visibility = 'visible';
   playButton.style.display = "none";
   replayButton.style.display = "none";
 
+  //============================================================================================
+  //Each obstacle is created at a gap of certain time so that the obstacles doesn't block my car from all side
+  //===========================================================================================
   let interval = setInterval(() => {
 
     //increment the speed at each interval
     speed += 0.1;
-
     let obs = new Obstacle(speed, interval);
     obs.draw();
     obsArray.push(obs);

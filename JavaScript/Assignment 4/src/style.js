@@ -9,7 +9,7 @@ road.style.position = "fixed";
 road.style.top = '50%';
 road.style.left = '50%';
 road.style.transform = 'translate(-50%, -50%)';
-road.style.backgroundImage = `url(./images/mobile.png)`;
+// road.style.backgroundImage = `url(./images/mobile.png)`;
 
 let playButton = document.getElementById('play');
 playButton.style.background = "green";
@@ -38,12 +38,12 @@ replayButton.style.transform = 'translate(-50%, -50%)';
 replayButton.style.display = 'none';
 replayButton.style.zIndex = '2';
 
-// const car = document.getElementById("car");
-// car.style.width = '55px';
-// car.style.height = '100px';
-// car.style.position = 'absolute';
-// car.style.backgroundImage = `url('./images/car.png')`;
-// car.style.backgroundRepeat = 'no-repeat';
-// car.style.bottom = '10px';
-// car.style.transition = '0.4s';
-// car.style.backgroundPosition = 'center';
+const image = document.getElementById("Image");
+image.style.top = '50%';
+image.style.left = '50%';
+image.style.transform = 'translate(-50%, -50%)';
+image.style.position = 'absolute';
+image.style.overflow = 'hidden';
+image.style.display = 'none';
+
+
