@@ -3,20 +3,20 @@
 //=========================
 
 function CreateBall() {
-  this.ball = document.createElement("div");
-  this.ball.classList.add("ball");
+  this.ball = document.createElement('div');
+  this.ball.classList.add('ball');
 
   this.color = getRandomColor();
   this.ball.style.background = this.color;
 
-  this.ball.style.borderRadius = "50%";
+  this.ball.style.borderRadius = '50%';
   
   this.radius = getRandomInt(10, 30);
   this.Width = 2 * this.radius;
   this.Height = 2 * this.radius;
 
-  this.ball.style.width = this.Width + "px";
-  this.ball.style.height = this.Height + "px";
+  this.ball.style.width = this.Width + 'px';
+  this.ball.style.height = this.Height + 'px';
 
   this.x = getRandomInt(0, boundaryWidth);
   this.y = getRandomInt(0, boundaryHeight);
@@ -26,20 +26,22 @@ function CreateBall() {
 
   this.speed = getRandomInt(1,8);
 
-  this.ball.style.top = this.y + "px";
-  this.ball.style.left = this.x + "px";
-  this.ball.style.position = "absolute";
+  this.ball.style.top = this.y + 'px';
+  this.ball.style.left = this.x + 'px';
+  this.ball.style.position = 'absolute';
 
+  // let's add each ball in the canvas
   this.draw = function () {
     canvas.appendChild(this.ball);
   };
 
+  // Move that ball considering they may get collide with wall or with other ball later
   this.move = function () {
     setInterval(() => {
       this.x += this.speed * this.dx;
       this.y += this.speed * this.dy;
-      this.ball.style.top = this.y + "px";
-      this.ball.style.left = this.x + "px";
+      this.ball.style.top = this.y + 'px';
+      this.ball.style.left = this.x + 'px';
 
       // Collision Detection
       this.checkWallCollision();
@@ -47,6 +49,7 @@ function CreateBall() {
     }, 1000 / fps);
   };
 
+  //change the direction when ball get collide with wall
   this.checkWallCollision = function () {
     if (this.x + this.Width > boundaryWidth) {
       this.dx = -1;
@@ -65,6 +68,7 @@ function CreateBall() {
     }
   };
 
+  // change the direction if the ball get collide with each other
   this.checkBallCollision = function () {
     ballArray.forEach((ball) => {
       
@@ -83,7 +87,7 @@ function CreateBall() {
 
           if (distance <= radius1 + radius2) { //collision occur
 
-            // change the direction
+            // change the direction by determining their new direction
             collision_angle = Math.atan2(dy,dx);
 
             magnitude_1 = Math.sqrt(ball.dx*ball.dx+ball.dy*ball.dy);
@@ -118,7 +122,7 @@ function CreateBall() {
 //============================================================
 // Insert the ball and its position in the canvas or viewport
 //============================================================
-canvas.innerHTML = "";
+canvas.innerHTML = '';
 for (let i = 0; i < ballCount; i++) {
   const ball = new CreateBall();
   ballArray.push(ball);

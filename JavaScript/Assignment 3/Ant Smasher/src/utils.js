@@ -17,11 +17,6 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-//get random color of ant
-function getRandomColor(){
-  return 'rgb('+getRandomInt(0, 255)+','+getRandomInt(0, 255)+','+getRandomInt(0, 255)+')';
-}
-
 //get the distance using Pythagoras theorem
 function distance(a, b) {
   return Math.sqrt((a.x - b.x)**2 + (a.y - b.y)**2);

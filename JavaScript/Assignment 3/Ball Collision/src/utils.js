@@ -28,7 +28,7 @@ function distance(a, b) {
 }
 
 //this function solve the two ball being stuck together
-//limitation: ball may go little bit outside of canvas
+//limitation: ball may go little bit outside of canvas if they stuck near boundary but comes back with no any delay
 function solveStuck(ball1, ball2, isStuck=false){
 
   let overlap = ball1.radius + ball2.radius - distance(ball1, ball2);

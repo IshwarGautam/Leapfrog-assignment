@@ -3,8 +3,14 @@
 //=========================
 
 function CreateAnt() {
-  this.ant = document.createElement("div");
-  this.ant.style.backgroundImage = `url('./image/ant.gif')`;
+  this.ant = document.createElement('div');
+
+  //Trying with gif of first ant
+  this.ant.style.backgroundImage = `url('./image/ant1.gif')`;
+
+  //Trying with gif of second ant
+  // this.ant.style.backgroundImage = `url('./image/ant2.gif')`;
+  // Conclusion: the size is big and changing its size doesn't seem real ant
   
   this.Width = 68;
   this.Height = 93;
@@ -12,8 +18,8 @@ function CreateAnt() {
   //just assuming the radius to be one-forth of ant width
   this.radius = this.Width/4;
 
-  this.ant.style.width = this.Width + "px";
-  this.ant.style.height = this.Height + "px";
+  this.ant.style.width = this.Width + 'px';
+  this.ant.style.height = this.Height + 'px';
 
   this.x = getRandomInt(0, boundaryWidth);
   this.y = getRandomInt(0, boundaryHeight);
@@ -23,10 +29,11 @@ function CreateAnt() {
 
   this.speed = getRandomInt(1,5);
 
-  this.ant.style.top = this.y + "px";
-  this.ant.style.left = this.x + "px";
-  this.ant.style.position = "absolute";
+  this.ant.style.top = this.y + 'px';
+  this.ant.style.left = this.x + 'px';
+  this.ant.style.position = 'absolute';
 
+  // Add each of ant in the canvas
   this.draw = function () {
     canvas.appendChild(this.ant);
   };
@@ -38,15 +45,16 @@ function CreateAnt() {
     canvas.removeChild(this.ant);
   };
 
-  this.ant.addEventListener("click", this.delete);
-  this.ant.style.cursor = "no-drop";
+  this.ant.addEventListener('click', this.delete);
+  this.ant.style.cursor = 'no-drop';
 
+  // Ant moves in any direction considering they may get collide with wall or with each other later
   this.move = function () {
     setInterval(() => {
       this.x += this.speed * this.dx;
       this.y += this.speed * this.dy;
-      this.ant.style.top = this.y + "px";
-      this.ant.style.left = this.x + "px";
+      this.ant.style.top = this.y + 'px';
+      this.ant.style.left = this.x + 'px';
 
       // Collision Detection
       this.checkWallCollision();
@@ -55,6 +63,7 @@ function CreateAnt() {
     }, 1000 / fps);
   };
 
+  // Ant may get collide with wall
   this.checkWallCollision = function () {
     if (this.x + this.Width > boundaryWidth) {
       this.dx = -1;
@@ -77,6 +86,7 @@ function CreateAnt() {
     }
   };
 
+  // Ant may get collide with each other
   this.checkAntCollision = function () {
     antArray.forEach((ant) => {
       
@@ -86,7 +96,7 @@ function CreateAnt() {
           let b1y = ant.y;
           let b2x = antArray[i].x;
           let b2y = antArray[i].y;
-          let radius1 = ant.radius;
+          let radius1 = ant.radius; // assuming the radius of ant to be one-forth of its width
           let radius2 = antArray[i].radius;
           let dx = b1x - b2x;
           let dy = b1y - b2y;
@@ -94,7 +104,9 @@ function CreateAnt() {
 
           if (distance <= radius1 + radius2) { //collision occur
 
-            // change the direction
+            // Transform their head and change the direction
+            this.ant.style.transform = 'rotate(5deg)';
+
             collision_angle = Math.atan2(dy,dx);
 
             magnitude_1 = Math.sqrt(ant.dx*ant.dx+ant.dy*ant.dy);
@@ -129,7 +141,7 @@ function CreateAnt() {
 //============================================================
 // Insert the ant and its position in the canvas or viewport
 //============================================================
-canvas.innerHTML = "";
+canvas.innerHTML = '';
 for (let i = 0; i < antCount; i++) {
   const ant = new CreateAnt();
   antArray.push(ant);
