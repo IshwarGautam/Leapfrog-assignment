@@ -4,8 +4,6 @@ const laneCount = 3;
 const laneLength = 600;
 const carHeight = 100;
 
-const BACKGROUND_IMAGE_POSITION = -600;
-
 const laneMap = {
   0: "lane-left",
   1: "lane-middle",
@@ -36,7 +34,7 @@ function playKey(){
 }
 playKey();
 
-// Create obstacleo class
+// Create obstacle class
 class Obstacle {
   constructor(speed, interval) {
     this.index = getRandomInt(0, 3);
@@ -44,7 +42,6 @@ class Obstacle {
     this.speed = speed;
     this.passed = 0;
     this.interval = interval;
-    this.backgroundYPosition = BACKGROUND_IMAGE_POSITION;
   }
 
   // draw an obstacle (other car)
@@ -64,28 +61,30 @@ class Obstacle {
   
   move() {
 
-    //image = road
-    // provide some motion to the road so that it looks like the car is moving
-    
+    //The image is of road.
+    // here, I am providing some motion to the road so that it looks like the car is moving
     image.style.top = this.y + "px";
     
     image.style.position = 'absolute';
-    image.style.transition = '0.01s';
+    // image.style.transition = '0.01s';
     image.style.overflow = 'hidden';
 
+    // no need to increase y after collision for the same instance
     if (!this.passed){
       this.y += this.speed;
       this.element.style.top = this.y + "px";
     }
 
+    //check for collision
     this.collide();
     
+    //when an obstacle passed my car
     if (this.y >= laneLength) {
       this.element.remove();
       this.passed = true;
     }
 
-    // obstacle that passed away is given negative index 
+    // obstacle that passed away is given negative index so that its index doesn't affect me further
     if (this.y > laneLength - carHeight){
       this.index = -1;
     }
@@ -98,18 +97,30 @@ class Obstacle {
   collide(){ 
     if (this.y>laneLength - 2 * carHeight  && index === this.index){
       
+      //remove that obstacl
       this.element.remove();
+
+      //don't need to generate new obstacle
       clearInterval(this.interval);  
+
+      //hide the image of road
       image.style.display = 'none';
+
+      //display gameover in mobile view
       road.style.backgroundImage = `url(./images/mobile.png)`;
       lane.style.backgroundImage = `url(./images/gameover.png)`;
+
+      //set transition time
       lane.style.transition = '0.4s';
 
+      //display restart button after 2 second
       setTimeout(() => {
         replayButton.style.display = 'block';
       }, 2000);
 
       speed = 5; //default value
+
+      //also hide my car
       car.style.visibility = 'hidden';
     }
     
