@@ -37,3 +37,13 @@ body{
 .car.lane-right {
   left: 225px;
 }
+
+.rule{
+  text-align:center;
+  color:brown;
+  background:lawngreen;
+  font-size:30;
+  width:30%;
+  margin-top:200px;
+  position: absolute;
+}

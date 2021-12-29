@@ -48,6 +48,9 @@ class Obstacle {
   draw() {
     this.element = document.createElement("div");
 
+    //By some reason, the replay button may sometime appear even after undisplay it
+    //so here, I am again setting display it to none
+    replayButton.style.display = 'none';
     const laneMapValue = laneMap[this.index];
 
     this.element.setAttribute("class", `car ${laneMapValue}`);
@@ -102,6 +105,7 @@ class Obstacle {
       info.style.transform = "translate(-50%,-50%)";
       info.style.left = "50%";
       info.style.top = "40%";
+      info.style.position = "absolute";
       info.style.background = "#f52";
 
 
