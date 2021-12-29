@@ -14,7 +14,7 @@ const PIPE_BOTTOM_Y = 300;
 // This is the environment or area where the birds can fly
 // If it goes out of these two value, game over
 const ENVT_TOP = -25;
-const ENVT_BOTTOM = 328;
+const ENVT_BOTTOM = 348;
 
 //===============================================================
 //All these variables are initialized based on the size of container
@@ -48,6 +48,10 @@ function gameover(){
     clearInterval(interval1);
     clearInterval(interval2);
     replay();
+
+    bird.style.top = ENVT_BOTTOM + 'px';
+    bird.style.transition = '1s';
+    bird.style.transform = 'rotate(50deg)';
   }
 }
 
@@ -57,6 +61,8 @@ function replay(){
     replayButton.style.display = 'block';
     bird.style.top = '100px';
     bird.style.transition = 'none';
+
+    bird.style.transform = 'none';
   }, 2000);
 }
 
@@ -133,6 +139,11 @@ function Obstacle(dx,speed, interval1, interval2){
         dieAudio.play();
         clearInterval(this.interval1);
         clearInterval(this.interval2);
+
+        bird.style.top = ENVT_BOTTOM + 'px';
+        bird.style.transition = '1s';
+        bird.style.transform = 'rotate(50deg)';
+
         replay();
       }
     } 
