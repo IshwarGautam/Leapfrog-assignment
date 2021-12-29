@@ -11,7 +11,6 @@ const ENVT_BOTTOM = 328;
 document.addEventListener("keydown", (event) => {
   if (event.code === "Space") {
     flyAudio.play();
-    console.log(birdTop);
     birdTop -=100;
     bird.style.transition = "0.3s";
   }
@@ -53,7 +52,6 @@ function replay(){
     replayButton.style.display = 'block';
     bird.style.top = '100px';
     bird.style.transition = 'none';
-
   }, 2000);
 }
 
@@ -66,6 +64,8 @@ function Obstacle(dx,speed, interval1, interval2){
   this.speed = speed;
   this.interval1 = interval1;
   this.interval2 = interval2;
+
+  replayButton.style.display = 'none';
 
   this.pipeUp = function(){
     this.pipe1 = document.createElement('div');
@@ -119,18 +119,21 @@ function Obstacle(dx,speed, interval1, interval2){
         dieAudio.play();
         clearInterval(this.interval1);
         clearInterval(this.interval2);
+        this.pipe1.remove();
+        this.pipe2.remove();
         replay();
       }
     } 
   }
 
 }
-obsArray = [];
+let obsArray = [];
 let dx;
 let speed;
 let interval1;
 let interval2;
 let birdTop;
+let score;
 
 // get highscore from our local storage
 let highScore = localStorage.getItem("highScore") || 0;
@@ -143,6 +146,7 @@ function playGame(){
   birdTop = 100; //initial bird position along y axis
   dx = 1;
   speed = 3;
+  obsArray = [];
 
   
   interval1 = setInterval(() => {
