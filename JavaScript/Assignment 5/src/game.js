@@ -1,15 +1,15 @@
 // Initializing required variables
 const fps = 60;
 
-// This is the start and end region of the area while collision may occur
+// This is the start and end region of the area where collision may occur
 //because bird left position is fixed and when pipe comes to this position,
 // then only we check if bird collide or not
 const START_X_REGION = -10;
 const END_X_REGION = 100;
 
-// This value helps in calculating tips of two up and down pipe
-const PIPE_TOP_Y = 0;
-const PIPE_BOTTOM_Y = 300;
+// This value is the position of tips of two up and down pipe
+const PIPE_TOP_Y = 10;
+const PIPE_BOTTOM_Y = 220;
 
 // This is the environment or area where the birds can fly
 // If it goes out of these two value, game over
@@ -17,7 +17,7 @@ const ENVT_TOP = -25;
 const ENVT_BOTTOM = 348;
 
 //===============================================================
-//All these variables are initialized based on the size of container
+//All these variables are declared based on the size of container
 // and the different styling that have applied.
 //===============================================================
 
@@ -60,8 +60,7 @@ function replay(){
   setTimeout(() => {
     replayButton.style.display = 'block';
     bird.style.top = '100px';
-    bird.style.transition = 'none';
-
+    bird.style.display = 'none';
     bird.style.transform = 'none';
   }, 2000);
 }
@@ -170,8 +169,11 @@ function playGame(){
   thumbnail.style.display = "none";
   replayButton.style.display = "none";
 
+  bird.style.display = 'block';
+
   message.style.display = "block";
   message.style.transition = "1s";
+
   setTimeout(() => {
     message.style.display = "none";
   }, 4000);

@@ -53,7 +53,7 @@ frame.appendChild(bird);
 
 const message = document.createElement('div');
 message.style.backgroundImage = `url('./images/ready.gif')`;
-message.style.top = '0px';
+message.style.bottom = '0px';
 message.style.left = '20%';
 message.style.width = '380px';
 message.style.height = '214px';
