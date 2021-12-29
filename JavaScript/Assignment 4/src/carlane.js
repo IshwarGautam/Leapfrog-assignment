@@ -102,6 +102,7 @@ class Obstacle {
       info.style.transform = "translate(-50%,-50%)";
       info.style.left = "50%";
       info.style.top = "40%";
+      info.style.background = "#f52";
 
 
       //remove that obstacle
@@ -152,18 +153,11 @@ function playGame(){
 
   //remove some of the css property of score and highscore
   //like I don't want to display them in the screen while I am playing
-  // if (scoreIncenter){
-  //   road.removeChild(info);
-  //   scoreIncenter = 0;
-  // }
-
-  
-
-  
   info.style.removeProperty('color');
   info.style.removeProperty('transform');
   info.style.removeProperty('left');
   info.style.removeProperty('top');
+  info.style.removeProperty('background');
 
   //============================================================================================
   //Each obstacle is created at a gap of certain time so that the obstacles doesn't block my car from all side
