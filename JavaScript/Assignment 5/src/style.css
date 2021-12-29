@@ -1,0 +1,10 @@
+.frame{
+  width: 288px;
+  height: 512px;
+  border: 2px solid black;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  /* overflow: hidden; */
+}
