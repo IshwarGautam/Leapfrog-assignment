@@ -6,5 +6,16 @@
   left: 50%;
   transform: translate(-50%,-50%);
   position: absolute;
-  /* overflow: hidden; */
+  overflow: hidden;
+}
+
+
+.rule{
+  text-align:center;
+  color:brown;
+  background:lawngreen;
+  font-size:30;
+  width:30%;
+  margin-top:200px;
+  position: absolute;
 }

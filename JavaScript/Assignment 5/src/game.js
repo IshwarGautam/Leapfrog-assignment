@@ -8,6 +8,14 @@ const PIPE_BOTTOM_Y = 260;
 const ENVT_TOP = -25;
 const ENVT_BOTTOM = 328;
 
+document.addEventListener("keydown", (event) => {
+  if (event.code === "Space") {
+    flyAudio.play();
+    console.log(birdTop);
+    birdTop -=100;
+    bird.style.transition = "0.3s";
+  }
+});
 
 let flyAudio = new Audio('./audio/fly.wav');
 let dieAudio = new Audio('./audio/die.wav');
@@ -36,7 +44,17 @@ function gameover(){
     dieAudio.play();
     clearInterval(interval1);
     clearInterval(interval2);
+    replay();
   }
+}
+
+function replay(){
+  setTimeout(() => {
+    replayButton.style.display = 'block';
+    bird.style.top = '100px';
+    bird.style.transition = 'none';
+
+  }, 2000);
 }
 
 
@@ -48,8 +66,6 @@ function Obstacle(dx,speed, interval1, interval2){
   this.speed = speed;
   this.interval1 = interval1;
   this.interval2 = interval2;
-
-  
 
   this.pipeUp = function(){
     this.pipe1 = document.createElement('div');
@@ -83,7 +99,6 @@ function Obstacle(dx,speed, interval1, interval2){
   this.move = function(){
     setInterval(() => {
       this.x -= this.dx; 
-      this.value -= this.dx;
       this.pipe1.style.left = this.x + 'px';
       this.pipe2.style.left = this.x + 'px'; 
     
@@ -104,27 +119,32 @@ function Obstacle(dx,speed, interval1, interval2){
         dieAudio.play();
         clearInterval(this.interval1);
         clearInterval(this.interval2);
+        replay();
       }
     } 
   }
 
 }
 obsArray = [];
-let dx = 1;
-let speed = 3;
+let dx;
+let speed;
 let interval1;
 let interval2;
+let birdTop;
 
-let birdTop = 100; //initial bird position along y axis
+// get highscore from our local storage
+let highScore = localStorage.getItem("highScore") || 0;
+
 function playGame(){
-  document.addEventListener("keydown", (event) => {
-    if (event.code === "ArrowLeft") {
-      flyAudio.play();
-      birdTop -=100;
-      bird.style.transition = "0.3s";
-    }
-  });
 
+  playButton.style.display = "none";
+
+  replayButton.style.display = "none";
+  birdTop = 100; //initial bird position along y axis
+  dx = 1;
+  speed = 3;
+
+  
   interval1 = setInterval(() => {
     birdTop+=20;
     bird.style.top = birdTop + "px";
@@ -141,7 +161,27 @@ function playGame(){
     obs.draw();
     obs.move();
   }, 3000);
+  maintainScore();
 }
 
-const playButton = document.getElementById('play');
+function maintainScore(){
+  if (obsArray.length>1){
+    score = obsArray.length - 1;
+  }
+  else{
+    score = 0;
+  }
+  
+  // update the highscore
+  if (score>highScore) {
+    highScore = score;
+    localStorage.setItem("highScore", highScore);
+  }
+
+  
+  document.getElementById("score").innerHTML = score;
+  document.getElementById("highScore").innerHTML = highScore; 
+}
+
 playButton.addEventListener("click", playGame);
+replayButton.addEventListener("click", playGame);
