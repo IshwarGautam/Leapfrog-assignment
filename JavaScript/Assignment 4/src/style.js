@@ -1,4 +1,5 @@
 const lane = document.getElementById("lane");
+const info = document.getElementById("info");
 car.style.visibility = "hidden";
 
 const road = document.getElementById("road");

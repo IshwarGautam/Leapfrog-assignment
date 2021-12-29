@@ -97,7 +97,14 @@ class Obstacle {
   collide(){ 
     if (this.y>laneLength - 2 * carHeight  && index === this.index){
       
-      //remove that obstacl
+      // display score and highscore in the middle of the screen
+      info.style.color = "yellow";
+      info.style.transform = "translate(-50%,-50%)";
+      info.style.left = "50%";
+      info.style.top = "40%";
+
+
+      //remove that obstacle
       this.element.remove();
 
       //don't need to generate new obstacle
@@ -133,6 +140,7 @@ let highScore = localStorage.getItem("highScore") || 0;
 let score = 0;
 let speed = 5;
 let obsArray = [];
+// let scoreIncenter =  0;
 
 function playGame(){
   obsArray = [];
@@ -141,6 +149,21 @@ function playGame(){
   car.style.visibility = 'visible';
   playButton.style.display = "none";
   replayButton.style.display = "none";
+
+  //remove some of the css property of score and highscore
+  //like I don't want to display them in the screen while I am playing
+  // if (scoreIncenter){
+  //   road.removeChild(info);
+  //   scoreIncenter = 0;
+  // }
+
+  
+
+  
+  info.style.removeProperty('color');
+  info.style.removeProperty('transform');
+  info.style.removeProperty('left');
+  info.style.removeProperty('top');
 
   //============================================================================================
   //Each obstacle is created at a gap of certain time so that the obstacles doesn't block my car from all side
