@@ -119,8 +119,6 @@ function Obstacle(dx,speed, interval1, interval2){
         dieAudio.play();
         clearInterval(this.interval1);
         clearInterval(this.interval2);
-        this.pipe1.remove();
-        this.pipe2.remove();
         replay();
       }
     } 
@@ -141,7 +139,7 @@ let highScore = localStorage.getItem("highScore") || 0;
 function playGame(){
 
   playButton.style.display = "none";
-
+  thumbnail.style.display = "none";
   replayButton.style.display = "none";
   birdTop = 100; //initial bird position along y axis
   dx = 1;

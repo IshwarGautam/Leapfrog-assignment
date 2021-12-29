@@ -38,3 +38,4 @@ replayButton.style.display = 'none';
 replayButton.style.zIndex = '2';
 
 const info = document.getElementById("info");
+const thumbnail = document.getElementById("thumbnail");
