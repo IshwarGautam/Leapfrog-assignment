@@ -9,7 +9,7 @@ const END_X_REGION = 100;
 
 // This value is the position of tips of two up and down pipe
 const PIPE_TOP_Y = 10;
-const PIPE_BOTTOM_Y = 220;
+const PIPE_BOTTOM_Y = 250;
 
 // This is the environment or area where the birds can fly
 // If it goes out of these two value, game over
@@ -41,17 +41,22 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min); 
 }
 
+
 // Check if the birds go out of frame
 function gameover(){
-  if (birdTop <= ENVT_TOP || birdTop >=ENVT_BOTTOM){
-    dieAudio.play();
-    clearInterval(interval1);
-    clearInterval(interval2);
-    replay();
+  if (!isCollide){
+    if (birdTop <= ENVT_TOP || birdTop >=ENVT_BOTTOM){
+      dieAudio.play();
+      clearInterval(interval1);
+      clearInterval(interval2);
+      replay();
+  
+      bird.style.top = ENVT_BOTTOM + 'px';
+      bird.style.transition = '1s';
+      bird.style.transform = 'rotate(50deg)';
 
-    bird.style.top = ENVT_BOTTOM + 'px';
-    bird.style.transition = '1s';
-    bird.style.transform = 'rotate(50deg)';
+      isCollide = 1;
+    }
   }
 }
 
@@ -59,10 +64,12 @@ function gameover(){
 function replay(){
   setTimeout(() => {
     replayButton.style.display = 'block';
+
     bird.style.top = '100px';
     bird.style.display = 'none';
     bird.style.transform = 'none';
-  }, 2000);
+    
+  }, 3000);
 }
 
 
@@ -132,18 +139,22 @@ function Obstacle(dx,speed, interval1, interval2){
 
   // here is the implementation when bird collide with the pipe
   this.collision = function(){
-    if (this.x <= END_X_REGION && this.x >= START_X_REGION){
-      if (birdTop <= PIPE_TOP_Y - this.y  || birdTop >= PIPE_BOTTOM_Y - this.y){
-        //gameover
-        dieAudio.play();
-        clearInterval(this.interval1);
-        clearInterval(this.interval2);
+    if (!isCollide){
+      if (this.x <= END_X_REGION && this.x >= START_X_REGION){
+        if (birdTop <= PIPE_TOP_Y - this.y  || birdTop >= PIPE_BOTTOM_Y - this.y){
+          //gameover
+          dieAudio.play();
+          clearInterval(this.interval1);
+          clearInterval(this.interval2);
+  
+          bird.style.top = ENVT_BOTTOM + 'px';
+          bird.style.transition = '1s';
+          bird.style.transform = 'rotate(50deg)';
+  
+          replay();
 
-        bird.style.top = ENVT_BOTTOM + 'px';
-        bird.style.transition = '1s';
-        bird.style.transform = 'rotate(50deg)';
-
-        replay();
+          isCollide = 1;
+        }
       }
     } 
   }
@@ -157,6 +168,7 @@ let interval1;
 let interval2;
 let birdTop;
 let score;
+let isCollide;
 
 // get highscore from our local storage
 let highScore = localStorage.getItem("highScore") || 0;
@@ -168,7 +180,7 @@ function playGame(){
   playButton.style.display = "none";
   thumbnail.style.display = "none";
   replayButton.style.display = "none";
-
+  
   bird.style.display = 'block';
 
   message.style.display = "block";
@@ -176,6 +188,7 @@ function playGame(){
 
   setTimeout(() => {
     message.style.display = "none";
+    isCollide = 0;
   }, 4000);
 
   birdTop = 100; //initial bird position along y axis
