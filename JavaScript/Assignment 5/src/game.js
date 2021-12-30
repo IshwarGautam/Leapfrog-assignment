@@ -8,8 +8,8 @@ const START_X_REGION = -10;
 const END_X_REGION = 100;
 
 // This value is the position of tips of two up and down pipe
-const PIPE_TOP_Y = 10;
-const PIPE_BOTTOM_Y = 250;
+const PIPE_TOP_Y = -10;
+const PIPE_BOTTOM_Y = 270;
 
 // This is the environment or area where the birds can fly
 // If it goes out of these two value, game over
@@ -62,13 +62,22 @@ function gameover(){
 
 // replay button to play again after gameover
 function replay(){
+
+   // display score and highscore in the middle of the screen
+   info.style.color = "yellow";
+   info.style.transform = "translate(-50%,-80%)";
+   info.style.left = "50%";
+   info.style.top = "40%";
+   info.style.position = "absolute";
+   info.style.background = "#f52";
+
   setTimeout(() => {
     replayButton.style.display = 'block';
-
+    
     bird.style.top = '100px';
     bird.style.display = 'none';
     bird.style.transform = 'none';
-    
+
   }, 3000);
 }
 
@@ -122,9 +131,6 @@ function Obstacle(dx,speed, interval1, interval2){
       this.x -= this.dx; 
       this.pipe1.style.left = this.x + 'px';
       this.pipe2.style.left = this.x + 'px'; 
-
-      base.style.left = this.dx + 'px';
-      base.style.width = '100% 100%';
     
       if (this.x < -52){ // out of frame
         this.pipe1.remove();
@@ -133,6 +139,7 @@ function Obstacle(dx,speed, interval1, interval2){
 
       //while moving, we have to check whether it collide with the bird
       this.collision();
+      gameover();
 
     }, 1000/fps);
   }
@@ -173,6 +180,7 @@ let isCollide;
 // get highscore from our local storage
 let highScore = localStorage.getItem("highScore") || 0;
 document.getElementById("highScore").innerHTML = highScore; 
+document.getElementById("score").innerHTML = 0;
 
 // This is the main function to play game
 function playGame(){
@@ -185,6 +193,14 @@ function playGame(){
 
   message.style.display = "block";
   message.style.transition = "1s";
+
+  //remove some of the css property of score and highscore
+  //like I don't want to display them in the screen while I am playing
+  info.style.removeProperty('color');
+  info.style.removeProperty('transform');
+  info.style.removeProperty('left');
+  info.style.removeProperty('top');
+  info.style.removeProperty('background');
 
   setTimeout(() => {
     message.style.display = "none";
@@ -220,8 +236,8 @@ function playGame(){
 
   // Maintain current score and highest score
   function maintainScore(){
-    if (obsArray.length>2){
-      score = obsArray.length - 2;
+    if (obsArray.length>1){
+      score = obsArray.length - 1;
     }
     else{
       score = 0;

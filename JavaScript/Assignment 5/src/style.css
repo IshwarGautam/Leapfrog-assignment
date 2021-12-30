@@ -1,5 +1,7 @@
 body{
   background: rgb(0, 135, 147);
+  color: ivory;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .frame{
   width: 288px;
@@ -18,6 +20,6 @@ body{
   background:lawngreen;
   font-size:30;
   width:30%;
-  margin-top:100px;
+  margin-top:20%;
   position: absolute;
 }
