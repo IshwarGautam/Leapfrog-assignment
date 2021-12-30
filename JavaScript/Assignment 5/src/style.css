@@ -20,6 +20,15 @@ body{
   background:lawngreen;
   font-size:30;
   width:30%;
-  margin-top:20%;
+  margin-top:25%;
+  position: absolute;
+}
+
+.tips{
+  text-align:center;
+  color:yellow;
+  font-size:10;
+  width:30%;
+  margin-top:15%;
   position: absolute;
 }
