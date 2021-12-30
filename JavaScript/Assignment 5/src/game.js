@@ -9,7 +9,7 @@ const END_X_REGION = 100;
 
 // This value is the position of tips of two up and down pipe
 const PIPE_TOP_Y = -10;
-const PIPE_BOTTOM_Y = 270;
+const PIPE_BOTTOM_Y = 200;
 
 // This is the environment or area where the birds can fly
 // If it goes out of these two value, game over
